@@ -663,7 +663,7 @@
                     </div>
 
                     <!-- Success Message -->
-                    <div class="success-message" id="successMessage">
+                    <div class="success-message" id="successMessage" style="display: none;">
                         <div class="success-icon">✓</div>
                         <h3 style="color: var(--calm-water); margin-bottom: 1rem;">Application Submitted Successfully!</h3>
                         <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Thank you for your application. We've received your information and will review it carefully.</p>
@@ -883,95 +883,68 @@
             '</div>';
     }
 
-    function showSuccessMessage() {
-        console.log('Showing success message...');
-        
-        // Hide form elements
-        var applicationForm = document.getElementById('applicationForm');
-        var progressSteps = document.getElementById('progressSteps');
-        var formNavigation = document.getElementById('formNavigation');
-        var successMessage = document.getElementById('successMessage');
-        
-        if (applicationForm) applicationForm.style.display = 'none';
-        if (progressSteps) progressSteps.style.display = 'none';
-        if (formNavigation) formNavigation.style.display = 'none';
-        if (successMessage) successMessage.style.display = 'block';
-        
-        // Scroll to top
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-        
-        console.log('Success message should now be visible');
+// Update your showSuccessMessage function to this:
+function showSuccessMessage() {
+    console.log('Attempting to show success message...');
+    
+    // Hide all form elements
+    document.getElementById('progressSteps').style.display = 'none';
+    document.getElementById('formNavigation').style.display = 'none';
+    
+    // Hide all form steps
+    for (let i = 1; i <= totalSteps; i++) {
+        document.getElementById('step-' + i).style.display = 'none';
     }
-
-    // Wait for page to load
-    document.addEventListener('DOMContentLoaded', function() {
-        console.log('Application form script loaded');
+    
+    // Show success message
+    const successMessage = document.getElementById('successMessage');
+    if (successMessage) {
+        successMessage.style.display = 'block';
+        console.log('Success message should now be visible');
         
-        // Next button
-        document.getElementById('nextBtn').addEventListener('click', function() {
-            if (validateStep(currentStep)) {
-                currentStep++;
-                showStep(currentStep);
-            }
-        });
+        // Scroll to the message
+        successMessage.scrollIntoView({ behavior: 'smooth' });
+    } else {
+        console.error('Success message element not found!');
+    }
+}
 
-        // Previous button
-        document.getElementById('prevBtn').addEventListener('click', function() {
-            currentStep--;
-            showStep(currentStep);
+// Update your form submission handler to this:
+document.getElementById('applicationForm').addEventListener('submit', function(e) {
+    e.preventDefault();
+    console.log('Form submission started');
+    
+    // Validate terms acceptance
+    if (!document.getElementById('termsAccept').checked) {
+        alert('Please accept the terms and conditions to continue.');
+        return;
+    }
+    
+    // Show loading state
+    const submitBtn = document.getElementById('submitBtn');
+    submitBtn.textContent = 'Submitting...';
+    submitBtn.disabled = true;
+    
+    // Submit to Netlify
+    try {
+        const formData = new FormData(this);
+        fetch('/', {
+            method: 'POST',
+            headers: { "Content-Type": "application/x-www-form-urlencoded" },
+            body: new URLSearchParams(formData).toString()
+        }).then(() => {
+            console.log('Form submitted to Netlify');
+            showSuccessMessage();
+        }).catch(error => {
+            console.error('Submission error:', error);
+            // Still show success message even if Netlify submission fails
+            showSuccessMessage();
         });
-
-        // Form submission
-        document.getElementById('applicationForm').addEventListener('submit', function(e) {
-            e.preventDefault();
-            console.log('Form submission started');
-            
-            // Check terms
-            const termsAccepted = document.getElementById('termsAccept').checked;
-            if (!termsAccepted) {
-                alert('Please accept the terms and conditions to continue.');
-                return;
-            }
-            
-            if (!validateStep(currentStep)) {
-                console.log('Validation failed');
-                return;
-            }
-            
-            console.log('Validation passed, proceeding with submission');
-            
-            // Show loading state
-            const submitBtn = document.getElementById('submitBtn');
-            submitBtn.textContent = 'Submitting...';
-            submitBtn.disabled = true;
-            
-            // Show success message after 1 second regardless of fetch status
-            setTimeout(function() {
-                showSuccessMessage();
-            }, 1000);
-            
-            // Submit to Netlify in background
-            try {
-                const formData = new FormData(this);
-                fetch('/', {
-                    method: 'POST',
-                    headers: { "Content-Type": "application/x-www-form-urlencoded" },
-                    body: new URLSearchParams(formData).toString()
-                }).then(function(response) {
-                    console.log('Form submitted successfully to Netlify');
-                }).catch(function(error) {
-                    console.log('Netlify submission error (this is normal if testing locally):', error);
-                    // Success message still shows regardless
-                });
-            } catch (error) {
-                console.log('Form submission error:', error);
-                // Success message still shows regardless
-            }
-        });
-
-        // Initialize form
-        showStep(1);
-    });
+    } catch (error) {
+        console.error('Error:', error);
+        showSuccessMessage();
+    }
+});
 </script>
 </body>
 </html>

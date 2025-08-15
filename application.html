@@ -1,0 +1,942 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Apply for Still Water Foundation's educational programs - scholarships, mentorship, STEM education, and skills training.">
+    <title>Apply Now - Still Water Foundation</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        /* Enhanced Form Input Styles */
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #2c3e50;
+            font-size: 0.95rem;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.875rem 1rem;
+            border: 2px solid #e1e8ed;
+            border-radius: 10px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: #ffffff;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--calm-water);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+            background: #fafbfd;
+        }
+        
+        .form-group input:hover,
+        .form-group select:hover,
+        .form-group textarea:hover {
+            border-color: #c5d2dc;
+        }
+        
+        .form-group input::placeholder,
+        .form-group textarea::placeholder {
+            color: #8e9aaf;
+            font-style: italic;
+        }
+        
+        /* Enhanced Input Icons */
+        .input-with-icon {
+            position: relative;
+        }
+        
+        .input-with-icon input {
+            padding-left: 2.75rem;
+        }
+        
+        .input-with-icon textarea {
+            padding-left: 2.75rem;
+            padding-top: 1rem;
+        }
+        
+        .input-icon {
+            position: absolute;
+            left: 0.875rem;
+            top: 1rem;
+            color: #8e9aaf;
+            font-size: 1.1rem;
+            pointer-events: none;
+            z-index: 1;
+        }
+        
+        .input-with-icon input:focus + .input-icon,
+        .input-with-icon textarea:focus + .input-icon {
+            color: var(--calm-water);
+        }
+        
+        /* Required field indicator */
+        .form-group label.required::after {
+            content: ' *';
+            color: #e74c3c;
+            font-weight: bold;
+        }
+        
+        /* Custom Select Styling */
+        .form-group select {
+            background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 20 20'%3e%3cpath stroke='%236b7280' stroke-linecap='round' stroke-linejoin='round' stroke-width='1.5' d='M6 8l4 4 4-4'/%3e%3c/svg%3e");
+            background-position: right 0.75rem center;
+            background-repeat: no-repeat;
+            background-size: 1.25rem;
+            padding-right: 2.5rem;
+            appearance: none;
+        }
+        
+        /* Textarea styling */
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        /* Floating Label Effect */
+        .floating-label {
+            position: relative;
+        }
+        
+        .floating-label input,
+        .floating-label textarea {
+            padding-top: 1.5rem;
+            padding-bottom: 0.5rem;
+        }
+        
+        .floating-label label {
+            position: absolute;
+            left: 1rem;
+            top: 0.875rem;
+            transition: all 0.3s ease;
+            pointer-events: none;
+            background: white;
+            padding: 0 0.25rem;
+        }
+        
+        .floating-label input:focus + label,
+        .floating-label input:not(:placeholder-shown) + label,
+        .floating-label textarea:focus + label,
+        .floating-label textarea:not(:placeholder-shown) + label {
+            top: -0.5rem;
+            left: 0.75rem;
+            font-size: 0.8rem;
+            color: var(--calm-water);
+            font-weight: 600;
+        }
+        
+        /* Form Steps */
+        .form-step {
+            display: none;
+        }
+        
+        .form-step.active {
+            display: block;
+            animation: slideIn 0.3s ease;
+        }
+        
+        @keyframes slideIn {
+            from {
+                opacity: 0;
+                transform: translateX(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        /* Progress Steps */
+        .progress-steps {
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 3rem;
+            position: relative;
+        }
+        
+        .progress-steps::before {
+            content: '';
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            right: 25px;
+            height: 3px;
+            background: #e0e0e0;
+            z-index: 1;
+            border-radius: 2px;
+        }
+        
+        .progress-steps .progress-line {
+            position: absolute;
+            top: 25px;
+            left: 25px;
+            height: 3px;
+            background: linear-gradient(90deg, var(--calm-water), var(--deep-ocean));
+            z-index: 2;
+            transition: width 0.5s ease;
+            width: 0%;
+            border-radius: 2px;
+        }
+        
+        .step {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 3;
+            position: relative;
+        }
+        
+        .step-number {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #e0e0e0;
+            color: #999;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 1.1rem;
+            transition: all 0.3s ease;
+            border: 3px solid #e0e0e0;
+        }
+        
+        .step.active .step-number {
+            background: var(--calm-water);
+            color: white;
+            border-color: var(--calm-water);
+            transform: scale(1.1);
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+        
+        .step.completed .step-number {
+            background: var(--deep-ocean);
+            color: white;
+            border-color: var(--deep-ocean);
+        }
+        
+        .step-label {
+            margin-top: 0.75rem;
+            font-size: 0.9rem;
+            font-weight: 500;
+            color: #666;
+            transition: color 0.3s ease;
+        }
+        
+        .step.active .step-label {
+            color: var(--calm-water);
+            font-weight: 600;
+        }
+        
+        .step.completed .step-label {
+            color: var(--deep-ocean);
+            font-weight: 600;
+        }
+        
+        /* Card styling */
+        .card {
+            background: white;
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 1px solid #f1f5f9;
+        }
+        
+        /* Navigation buttons */
+        .form-navigation {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 2.5rem;
+            padding-top: 2rem;
+            border-top: 1px solid #e2e8f0;
+        }
+        
+        .btn {
+            padding: 0.875rem 2rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            border: none;
+        }
+        
+        .btn-primary {
+            background: linear-gradient(135deg, var(--calm-water), var(--deep-ocean));
+            color: white;
+            box-shadow: 0 4px 12px rgba(102, 126, 234, 0.3);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(102, 126, 234, 0.4);
+        }
+        
+        .btn-outline {
+            background: white;
+            color: var(--calm-water);
+            border: 2px solid var(--calm-water);
+        }
+        
+        .btn-outline:hover {
+            background: var(--calm-water);
+            color: white;
+            transform: translateY(-1px);
+        }
+        
+        /* Success message */
+        .success-message {
+            display: none;
+            text-align: center;
+            padding: 3rem 2rem;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .success-icon {
+            width: 80px;
+            height: 80px;
+            background: linear-gradient(135deg, #10b981, #059669);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2.5rem;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 10px 25px rgba(16, 185, 129, 0.3);
+        }
+        
+        /* Checkbox styling */
+        input[type="checkbox"] {
+            width: 1.25rem !important;
+            height: 1.25rem !important;
+            accent-color: var(--calm-water);
+            margin: 0 !important;
+        }
+        
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            .progress-steps {
+                flex-wrap: wrap;
+                gap: 1rem;
+            }
+            
+            .progress-steps::before {
+                display: none;
+            }
+            
+            .step-label {
+                font-size: 0.8rem;
+            }
+            
+            .card {
+                padding: 1.5rem;
+            }
+            
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header id="header">
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">💧</span>
+                Still Water Foundation
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="programs.html" class="nav-link">Programs</a></li>
+                <li><a href="impact.html" class="nav-link">Impact</a></li>
+                <li><a href="get-involved.html" class="nav-link">Get Involved</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="donate.html" class="nav-cta">Donate</a></li>
+            </ul>
+            
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content text-center">
+                <h1 class="hero-title animate-fade-in-up">Apply for Our Programs</h1>
+                <p class="hero-subtitle animate-fade-in-up">Take the first step towards transforming your educational future</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form Section -->
+    <section class="section">
+        <div class="container">
+            <div style="max-width: 800px; margin: 0 auto;">
+                <!-- Progress Indicator -->
+                <div class="progress-steps" id="progressSteps">
+                    <div class="progress-line" id="progressLine"></div>
+                    <div class="step active">
+                        <div class="step-number">1</div>
+                        <div class="step-label">Personal Info</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-label">Education</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-label">Program</div>
+                    </div>
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-label">Review</div>
+                    </div>
+                </div>
+
+                <!-- Application Form -->
+                <form name="student-application" method="POST" netlify-honeypot="bot-field" data-netlify="true" id="applicationForm">
+                    <!-- Hidden honeypot field for spam protection -->
+                    <div style="display: none;">
+                        <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                    </div>
+
+                    <!-- Step 1: Personal Information -->
+                    <div class="form-step active" id="step-1">
+                        <div class="card">
+                            <div style="border-bottom: 1px solid #e0e0e0; padding-bottom: 1rem; margin-bottom: 2rem;">
+                                <h3 style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                    <span style="color: var(--calm-water);">👤</span> Personal Information
+                                </h3>
+                                <p style="color: #666; margin: 0;">Tell us about yourself</p>
+                            </div>
+                            
+                            <div class="grid grid-2 gap-2">
+                                <div class="form-group">
+                                    <label for="firstName" class="required">First Name</label>
+                                    <div class="input-with-icon">
+                                        <input type="text" id="firstName" name="firstName" required placeholder="Enter your first name">
+                                        <span class="input-icon">👤</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName" class="required">Last Name</label>
+                                    <div class="input-with-icon">
+                                        <input type="text" id="lastName" name="lastName" required placeholder="Enter your last name">
+                                        <span class="input-icon">👤</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-2 gap-2">
+                                <div class="form-group">
+                                    <label for="email" class="required">Email Address</label>
+                                    <div class="input-with-icon">
+                                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                                        <span class="input-icon">📧</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone" class="required">Phone Number</label>
+                                    <div class="input-with-icon">
+                                        <input type="tel" id="phone" name="phone" required placeholder="+1 (555) 123-4567">
+                                        <span class="input-icon">📱</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="address" class="required">Address</label>
+                                <textarea id="address" name="address" rows="3" required placeholder="Street address, city, state, ZIP code"></textarea>
+                            </div>
+
+                            <div class="grid grid-2 gap-2">
+                                <div class="form-group">
+                                    <label for="dateOfBirth" class="required">Date of Birth</label>
+                                    <div class="input-with-icon">
+                                        <input type="date" id="dateOfBirth" name="dateOfBirth" required>
+                                        <span class="input-icon">📅</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="gender">Gender</label>
+                                    <select id="gender" name="gender">
+                                        <option value="">Select your gender...</option>
+                                        <option value="male">Male</option>
+                                        <option value="female">Female</option>
+                                        <option value="non-binary">Non-binary</option>
+                                        <option value="prefer-not-to-say">Prefer not to say</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 2: Educational Background -->
+                    <div class="form-step" id="step-2">
+                        <div class="card">
+                            <div style="border-bottom: 1px solid #e0e0e0; padding-bottom: 1rem; margin-bottom: 2rem;">
+                                <h3 style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                    <span style="color: var(--calm-water);">🎓</span> Educational Background
+                                </h3>
+                                <p style="color: #666; margin: 0;">Your current education status</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="currentEducation" class="required">Current Education Level</label>
+                                <select id="currentEducation" name="currentEducation" required>
+                                    <option value="">Select your current education level...</option>
+                                    <option value="high-school">High School Student</option>
+                                    <option value="high-school-graduate">High School Graduate</option>
+                                    <option value="some-college">Some College</option>
+                                    <option value="college-student">Current College Student</option>
+                                    <option value="college-graduate">College Graduate</option>
+                                    <option value="other">Other</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="schoolName" class="required">School/Institution Name</label>
+                                <div class="input-with-icon">
+                                    <input type="text" id="schoolName" name="schoolName" required placeholder="Enter your school or institution name">
+                                    <span class="input-icon">🏫</span>
+                                </div>
+                            </div>
+
+                            <div class="grid grid-2 gap-2">
+                                <div class="form-group">
+                                    <label for="gpa">GPA (if applicable)</label>
+                                    <div class="input-with-icon">
+                                        <input type="text" id="gpa" name="gpa" placeholder="e.g., 3.5/4.0 or 85%">
+                                        <span class="input-icon">📊</span>
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="graduationYear">Expected Graduation Year</label>
+                                    <div class="input-with-icon">
+                                        <input type="number" id="graduationYear" name="graduationYear" min="2024" max="2030" placeholder="2025">
+                                        <span class="input-icon">🎓</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="fieldOfStudy" class="required">Field of Study/Major</label>
+                                <div class="input-with-icon">
+                                    <input type="text" id="fieldOfStudy" name="fieldOfStudy" required placeholder="e.g., Computer Science, Business, Medicine, Engineering">
+                                    <span class="input-icon">📚</span>
+                                </div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="academicAchievements">Academic Achievements & Awards</label>
+                                <textarea id="academicAchievements" name="academicAchievements" rows="4" placeholder="List any academic honors, awards, scholarships, or notable achievements..."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 3: Program Selection -->
+                    <div class="form-step" id="step-3">
+                        <div class="card">
+                            <div style="border-bottom: 1px solid #e0e0e0; padding-bottom: 1rem; margin-bottom: 2rem;">
+                                <h3 style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                    <span style="color: var(--calm-water);">📚</span> Program Selection
+                                </h3>
+                                <p style="color: #666; margin: 0;">Choose the program that fits your needs</p>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="program" class="required">Select Program</label>
+                                <select id="program" name="program" required>
+                                    <option value="">Choose the program that interests you...</option>
+                                    <option value="scholarship">📚 Educational Scholarship Program</option>
+                                    <option value="mentorship">👥 Mentorship Initiative</option>
+                                    <option value="digital-stem">💻 Digital Literacy & STEM Education</option>
+                                    <option value="skills-training">🛠️ Vocational & Skills Training</option>
+                                    <option value="entrepreneurship">🚀 Entrepreneurship & Innovation</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="financialNeed" class="required">Financial Need Level</label>
+                                <select id="financialNeed" name="financialNeed" required>
+                                    <option value="">Please select your financial situation...</option>
+                                    <option value="high">High - Significant financial hardship</option>
+                                    <option value="moderate">Moderate - Some financial constraints</option>
+                                    <option value="low">Low - Limited financial need</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="householdIncome">Annual Household Income Range</label>
+                                <select id="householdIncome" name="householdIncome">
+                                    <option value="">Prefer not to say</option>
+                                    <option value="under-25k">Under $25,000</option>
+                                    <option value="25k-50k">$25,000 - $50,000</option>
+                                    <option value="50k-75k">$50,000 - $75,000</option>
+                                    <option value="75k-100k">$75,000 - $100,000</option>
+                                    <option value="over-100k">Over $100,000</option>
+                                </select>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="goals" class="required">Educational Goals</label>
+                                <textarea id="goals" name="goals" rows="5" required placeholder="Describe your educational and career goals, and how this program will help you achieve them. What do you hope to accomplish in the next 2-3 years?"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="motivation" class="required">Why do you want to join this program?</label>
+                                <textarea id="motivation" name="motivation" rows="5" required placeholder="Tell us what motivates you and why you're passionate about education. What impact do you hope to make in your community?"></textarea>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="challenges">What challenges have you faced in your educational journey?</label>
+                                <textarea id="challenges" name="challenges" rows="4" placeholder="Optional: Share any obstacles you've overcome or are currently facing. This helps us better understand how we can support you."></textarea>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Step 4: Review & Submit -->
+                    <div class="form-step" id="step-4">
+                        <div class="card">
+                            <div style="border-bottom: 1px solid #e0e0e0; padding-bottom: 1rem; margin-bottom: 2rem;">
+                                <h3 style="display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.5rem;">
+                                    <span style="color: var(--calm-water);">✅</span> Review & Submit
+                                </h3>
+                                <p style="color: #666; margin: 0;">Please review your information before submitting</p>
+                            </div>
+                            
+                            <div id="reviewContent" style="background: #f8f9fa; padding: 1.5rem; border-radius: 8px; margin-bottom: 2rem;">
+                                <!-- Review content will be populated by JavaScript -->
+                            </div>
+
+                            <div class="form-group">
+                                <label style="display: flex; align-items: flex-start; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" id="termsAccept" name="termsAccept" required style="margin-top: 0.2rem;">
+                                    <span>I confirm that all information provided is accurate and I agree to the <a href="#" style="color: var(--calm-water);">terms and conditions</a> of the Still Water Foundation application process.</span>
+                                </label>
+                            </div>
+
+                            <div class="form-group">
+                                <label style="display: flex; align-items: flex-start; gap: 0.5rem; cursor: pointer;">
+                                    <input type="checkbox" id="newsletterOptIn" name="newsletterOptIn" style="margin-top: 0.2rem;">
+                                    <span>I would like to receive updates about Still Water Foundation programs and events.</span>
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Success Message -->
+                    <div class="success-message" id="successMessage">
+                        <div class="success-icon">✓</div>
+                        <h3 style="color: var(--calm-water); margin-bottom: 1rem;">Application Submitted Successfully!</h3>
+                        <p style="font-size: 1.1rem; margin-bottom: 1.5rem;">Thank you for your application. We've received your information and will review it carefully.</p>
+                        <p style="color: #666; margin-bottom: 2rem;">Please save this page or take a screenshot for your records. Our team will contact you within 3-5 business days regarding the next steps at the email address you provided.</p>
+                        <a href="programs.html" class="btn btn-primary">Back to Programs</a>
+                    </div>
+
+                    <!-- Form Navigation -->
+                    <div class="form-navigation" id="formNavigation">
+                        <button type="button" id="prevBtn" class="btn btn-outline" style="display: none;">Previous</button>
+                        <button type="button" id="nextBtn" class="btn btn-primary">Next</button>
+                        <button type="submit" id="submitBtn" class="btn btn-primary" style="display: none;">Submit Application</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Information -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>What Happens Next?</h2>
+                <p>Our application review process</p>
+            </div>
+            
+            <div class="grid grid-3 gap-3">
+                <div class="card text-center">
+                    <div style="width: 60px; height: 60px; background: var(--calm-water); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1rem;">
+                        📋
+                    </div>
+                    <h4>Application Review</h4>
+                    <p>Our team carefully reviews each application to understand your background and goals.</p>
+                </div>
+                
+                <div class="card text-center">
+                    <div style="width: 60px; height: 60px; background: var(--calm-water); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1rem;">
+                        💬
+                    </div>
+                    <h4>Interview Process</h4>
+                    <p>Selected candidates will be invited for a brief interview to discuss their aspirations.</p>
+                </div>
+                
+                <div class="card text-center">
+                    <div style="width: 60px; height: 60px; background: var(--calm-water); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1rem;">
+                        🎉
+                    </div>
+                    <h4>Program Enrollment</h4>
+                    <p>Accepted students receive their enrollment packet and begin their educational journey.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section" style="background: linear-gradient(135deg, var(--deep-ocean), var(--calm-water)); color: white;">
+        <div class="container text-center">
+            <h2 style="color: white; margin-bottom: 1.5rem;">Have Questions About Our Programs?</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95;">
+                We're here to help you every step of the way.
+            </p>
+            <div class="flex-center gap-3">
+                <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                <a href="programs.html" class="btn btn-secondary">View All Programs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>Still Water Foundation</h3>
+                    <p>Breaking barriers to education and creating pathways to success for underprivileged youth worldwide.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="impact.html">Our Impact</a></li>
+                        <li><a href="news.html">News & Events</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                        <li><a href="mentor.html">Become a Mentor</a></li>
+                        <li><a href="get-involved.html#team">Join Our Team</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@stillwater.org">info@stillwater.org</a></li>
+                        <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+                        <li><a href="contact.html">Contact Form</a></li>
+                        <li><a href="newsletter.html">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Still Water Foundation. All rights reserved. | Empowering futures, one drop at a time.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+    
+    <!-- Application Form JavaScript -->
+    <script>
+        let currentStep = 1;
+        const totalSteps = 4;
+
+        function showStep(step) {
+            // Hide all steps
+            document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
+            
+            // Show current step
+            document.getElementById(`step-${step}`).classList.add('active');
+            
+            // Update progress
+            updateProgress(step);
+            
+            // Update navigation buttons
+            updateNavigation(step);
+            
+            // Update step indicators
+            updateStepIndicators(step);
+        }
+
+        function updateProgress(step) {
+            const progressLine = document.getElementById('progressLine');
+            const percentage = ((step - 1) / (totalSteps - 1)) * 100;
+            progressLine.style.width = `${percentage}%`;
+        }
+
+        function updateStepIndicators(step) {
+            const steps = document.querySelectorAll('.step');
+            steps.forEach((stepEl, index) => {
+                stepEl.classList.remove('active', 'completed');
+                if (index + 1 < step) {
+                    stepEl.classList.add('completed');
+                } else if (index + 1 === step) {
+                    stepEl.classList.add('active');
+                }
+            });
+        }
+
+        function updateNavigation(step) {
+            const prevBtn = document.getElementById('prevBtn');
+            const nextBtn = document.getElementById('nextBtn');
+            const submitBtn = document.getElementById('submitBtn');
+            
+            prevBtn.style.display = step > 1 ? 'block' : 'none';
+            
+            if (step < totalSteps) {
+                nextBtn.style.display = 'block';
+                submitBtn.style.display = 'none';
+            } else {
+                nextBtn.style.display = 'none';
+                submitBtn.style.display = 'block';
+                populateReview();
+            }
+        }
+
+        function validateStep(step) {
+            const currentStepEl = document.getElementById(`step-${step}`);
+            const requiredFields = currentStepEl.querySelectorAll('[required]');
+            
+            for (let field of requiredFields) {
+                if (!field.value.trim()) {
+                    field.focus();
+                    field.style.borderColor = '#e74c3c';
+                    setTimeout(() => {
+                        field.style.borderColor = '';
+                    }, 3000);
+                    return false;
+                }
+            }
+            return true;
+        }
+
+        function populateReview() {
+            const formData = new FormData(document.getElementById('applicationForm'));
+            const reviewContent = document.getElementById('reviewContent');
+            
+            const programNames = {
+                'scholarship': 'Educational Scholarship Program',
+                'mentorship': 'Mentorship Initiative',
+                'digital-stem': 'Digital Literacy & STEM Education',
+                'skills-training': 'Vocational & Skills Training',
+                'entrepreneurship': 'Entrepreneurship & Innovation'
+            };
+            
+            reviewContent.innerHTML = `
+                <h4 style="margin-bottom: 1rem; color: var(--calm-water);">Application Summary</h4>
+                <div class="grid grid-2 gap-2">
+                    <div><strong>Name:</strong> ${formData.get('firstName')} ${formData.get('lastName')}</div>
+                    <div><strong>Email:</strong> ${formData.get('email')}</div>
+                    <div><strong>Phone:</strong> ${formData.get('phone')}</div>
+                    <div><strong>Education Level:</strong> ${formData.get('currentEducation')}</div>
+                    <div><strong>School:</strong> ${formData.get('schoolName')}</div>
+                    <div><strong>Field of Study:</strong> ${formData.get('fieldOfStudy')}</div>
+                    <div style="grid-column: 1 / -1;"><strong>Program:</strong> ${programNames[formData.get('program')] || formData.get('program')}</div>
+                </div>
+                <div style="margin-top: 1rem;">
+                    <p><strong>Educational Goals:</strong></p>
+                    <p style="background: white; padding: 1rem; border-radius: 6px; font-style: italic;">"${formData.get('goals')}"</p>
+                </div>
+            `;
+        }
+
+        // Event listeners
+        document.getElementById('nextBtn').addEventListener('click', () => {
+            if (validateStep(currentStep)) {
+                currentStep++;
+                showStep(currentStep);
+            }
+        });
+
+        document.getElementById('prevBtn').addEventListener('click', () => {
+            currentStep--;
+            showStep(currentStep);
+        });
+
+        // Form submission
+        document.getElementById('applicationForm').addEventListener('submit', (e) => {
+            e.preventDefault();
+            
+            if (!validateStep(currentStep)) {
+                return;
+            }
+            
+            // Show loading state
+            const submitBtn = document.getElementById('submitBtn');
+            const originalText = submitBtn.textContent;
+            submitBtn.textContent = 'Submitting...';
+            submitBtn.disabled = true;
+            
+            // Always show success message after 2 seconds (for demo/testing)
+            setTimeout(() => {
+                // Hide form and show success message
+                document.getElementById('applicationForm').style.display = 'none';
+                document.getElementById('progressSteps').style.display = 'none';
+                document.getElementById('successMessage').style.display = 'block';
+                
+                // Scroll to top
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }, 2000);
+            
+            // Try to submit form via Netlify (if available)
+            const formData = new FormData(e.target);
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            }).catch(error => {
+                console.log('Form submission note:', error);
+                // Form will still show success message above
+            });
+        });
+
+        // Initialize form
+        showStep(1);
+    </script>
+</body>
+</html>

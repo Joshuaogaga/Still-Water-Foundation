@@ -1,0 +1,1099 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Still Water Foundation - Breaking barriers to education and creating pathways to success for underprivileged youth worldwide">
+    <meta name="keywords" content="education, NGO, youth empowerment, scholarships, mentorship, SDG4">
+    <title>Still Water Foundation - Empowering Through Education</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
+    
+    <!-- External Styles -->
+    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+        /* CSS Reset & Base */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        :root {
+            /* New Professional Color Palette */
+            --deep-ocean: #0a2540;
+            --calm-water: #0066cc;
+            --light-water: #4da6ff;
+            --sky-blue: #e6f2ff;
+            --sand: #faf8f5;
+            --coral: #ff6b6b;
+            --seafoam: #4ecdc4;
+            --pearl: #ffffff;
+            --mist: #f7f9fc;
+            --stone: #64748b;
+            --charcoal: #1e293b;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+            line-height: 1.6;
+            color: var(--charcoal);
+            background: var(--pearl);
+        }
+        
+        /* Typography */
+        h1 { 
+            font-size: clamp(2.5rem, 5vw, 4rem);
+            font-weight: 700;
+            line-height: 1.1;
+        }
+        
+        h2 { 
+            font-size: clamp(2rem, 4vw, 3rem);
+            font-weight: 600;
+            line-height: 1.2;
+        }
+        
+        h3 { 
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 600;
+        }
+        
+        p {
+            font-size: 1.125rem;
+            line-height: 1.7;
+        }
+        
+        /* Container */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+        }
+        
+        /* Navigation */
+        header {
+            position: fixed;
+            top: 0;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.98);
+            backdrop-filter: blur(20px);
+            z-index: 1000;
+            transition: all 0.3s ease;
+            border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        header.scrolled {
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1.25rem 0;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--deep-ocean);
+            text-decoration: none;
+            transition: transform 0.3s ease;
+        }
+        
+        .logo:hover {
+            transform: translateX(5px);
+        }
+        
+        .logo-icon {
+            width: 40px;
+            height: 40px;
+            margin-right: 0.75rem;
+            background: linear-gradient(135deg, var(--calm-water), var(--light-water));
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+        }
+        
+        .nav-menu {
+            display: flex;
+            list-style: none;
+            gap: 2.5rem;
+            align-items: center;
+        }
+        
+        .nav-link {
+            color: var(--charcoal);
+            text-decoration: none;
+            font-weight: 500;
+            position: relative;
+            transition: color 0.3s ease;
+        }
+        
+        .nav-link:hover {
+            color: var(--calm-water);
+        }
+        
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: -5px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--calm-water);
+            transition: width 0.3s ease;
+        }
+        
+        .nav-link:hover::after {
+            width: 100%;
+        }
+        
+        .nav-cta {
+            background: var(--calm-water);
+            color: var(--pearl);
+            padding: 0.75rem 1.75rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+        
+        .nav-cta:hover {
+            background: var(--deep-ocean);
+            transform: translateY(-2px);
+            box-shadow: 0 10px 20px rgba(0, 102, 204, 0.2);
+        }
+        
+        .mobile-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.5rem;
+        }
+        
+        .mobile-toggle span {
+            display: block;
+            width: 25px;
+            height: 3px;
+            background: var(--charcoal);
+            margin: 5px 0;
+            transition: 0.3s;
+        }
+        
+        /* Hero Section */
+        .hero {
+            padding-top: 100px;
+            min-height: 100vh;
+            background: linear-gradient(135deg, var(--mist) 0%, var(--sky-blue) 100%);
+            position: relative;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -50%;
+            width: 200%;
+            height: 100%;
+            background: url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M50 30c11.046 0 20 8.954 20 20s-8.954 20-20 20-20-8.954-20-20 8.954-20 20-20zm0 5c-8.284 0-15 6.716-15 15s6.716 15 15 15 15-6.716 15-15-6.716-15-15-15z' fill='%230066cc' fill-opacity='0.03'/%3E%3C/svg%3E") repeat;
+            animation: drift 20s linear infinite;
+        }
+        
+        @keyframes drift {
+            from { transform: translateX(0); }
+            to { transform: translateX(100px); }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            padding: 4rem 0;
+        }
+        
+        .hero-text h1 {
+            color: var(--deep-ocean);
+            margin-bottom: 1.5rem;
+            animation: fadeInUp 0.8s ease;
+        }
+        
+        .hero-text .tagline {
+            font-size: 1.5rem;
+            color: var(--calm-water);
+            font-weight: 300;
+            margin-bottom: 1rem;
+            animation: fadeInUp 0.8s ease 0.1s both;
+        }
+        
+        .hero-text p {
+            color: var(--stone);
+            margin-bottom: 2rem;
+            animation: fadeInUp 0.8s ease 0.2s both;
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .hero-buttons {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+            animation: fadeInUp 0.8s ease 0.3s both;
+        }
+        
+        .btn {
+            padding: 1rem 2rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            display: inline-block;
+            border: 2px solid transparent;
+            cursor: pointer;
+        }
+        
+        .btn-primary {
+            background: var(--calm-water);
+            color: var(--pearl);
+        }
+        
+        .btn-primary:hover {
+            background: var(--deep-ocean);
+            transform: translateY(-2px);
+            box-shadow: 0 15px 30px rgba(10, 37, 64, 0.2);
+        }
+        
+        .btn-secondary {
+            background: var(--pearl);
+            color: var(--calm-water);
+            border-color: var(--calm-water);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--calm-water);
+            color: var(--pearl);
+        }
+        
+        .hero-visual {
+            position: relative;
+            animation: fadeInUp 0.8s ease 0.4s both;
+        }
+        
+        .hero-image {
+            width: 100%;
+            height: 500px;
+            background: linear-gradient(135deg, rgba(255,255,255,0.9), rgba(230,242,255,0.9));
+            border-radius: 20px;
+            box-shadow: 0 30px 60px rgba(0, 0, 0, 0.1);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero-image::before {
+            content: '';
+            position: absolute;
+            top: -50%;
+            left: -50%;
+            width: 200%;
+            height: 200%;
+            background: radial-gradient(circle, var(--calm-water) 0%, transparent 70%);
+            opacity: 0.05;
+            animation: rotate 20s linear infinite;
+        }
+        
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        
+        .hero-graphic {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            animation: float 4s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        /* Stats Section */
+        .stats-section {
+            background: var(--pearl);
+            padding: 4rem 0;
+            border-bottom: 1px solid var(--sky-blue);
+        }
+        
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 2rem;
+        }
+        
+        .stat-card {
+            text-align: center;
+            padding: 2rem;
+            background: var(--mist);
+            border-radius: 16px;
+            transition: all 0.3s ease;
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            color: var(--calm-water);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .stat-label {
+            color: var(--stone);
+            font-size: 1rem;
+            font-weight: 500;
+        }
+        
+        /* Mission Section */
+        .mission-section {
+            padding: 6rem 0;
+            background: var(--sand);
+        }
+        
+        .section-header {
+            text-align: center;
+            max-width: 800px;
+            margin: 0 auto 4rem;
+        }
+        
+        .section-header h2 {
+            color: var(--deep-ocean);
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            color: var(--stone);
+            font-size: 1.25rem;
+        }
+        
+        .mission-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-top: 4rem;
+        }
+        
+        .mission-card {
+            background: var(--pearl);
+            padding: 2.5rem;
+            border-radius: 16px;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .mission-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 4px;
+            background: linear-gradient(90deg, var(--calm-water), var(--seafoam));
+        }
+        
+        .mission-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .mission-icon {
+            width: 60px;
+            height: 60px;
+            background: var(--sky-blue);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+        }
+        
+        .mission-card h3 {
+            color: var(--deep-ocean);
+            margin-bottom: 1rem;
+            font-size: 1.5rem;
+        }
+        
+        .mission-card p {
+            color: var(--stone);
+            line-height: 1.7;
+        }
+        
+        /* Programs Preview Section */
+        .programs-section {
+            padding: 6rem 0;
+            background: var(--mist);
+        }
+        
+        .programs-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 3rem;
+            margin-top: 4rem;
+        }
+        
+        .program-card {
+            background: var(--pearl);
+            border-radius: 16px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            display: flex;
+            min-height: 250px;
+        }
+        
+        .program-card:hover {
+            transform: scale(1.02);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.12);
+        }
+        
+        .program-image {
+            width: 40%;
+            background: linear-gradient(135deg, var(--calm-water), var(--seafoam));
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 4rem;
+        }
+        
+        .program-content {
+            padding: 2rem;
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .program-content h3 {
+            color: var(--deep-ocean);
+            margin-bottom: 1rem;
+        }
+        
+        .program-content p {
+            color: var(--stone);
+            margin-bottom: 1.5rem;
+        }
+        
+        .learn-more {
+            color: var(--calm-water);
+            text-decoration: none;
+            font-weight: 600;
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            transition: gap 0.3s ease;
+        }
+        
+        .learn-more:hover {
+            gap: 1rem;
+        }
+        
+        /* Impact Section */
+        .impact-section {
+            padding: 6rem 0;
+            background: var(--pearl);
+        }
+        
+        .impact-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4rem;
+            align-items: center;
+            margin-top: 4rem;
+        }
+        
+        .impact-text h3 {
+            color: var(--deep-ocean);
+            margin-bottom: 1.5rem;
+        }
+        
+        .impact-text p {
+            color: var(--stone);
+            margin-bottom: 2rem;
+        }
+        
+        .impact-visual {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 1.5rem;
+        }
+        
+        .impact-box {
+            background: var(--mist);
+            padding: 2rem;
+            border-radius: 12px;
+            text-align: center;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        
+        .impact-box:hover {
+            border-color: var(--calm-water);
+            transform: translateY(-5px);
+            box-shadow: 0 15px 30px rgba(0, 102, 204, 0.1);
+        }
+        
+        .impact-box-number {
+            font-size: 2.5rem;
+            font-weight: 700;
+            color: var(--calm-water);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+        
+        .impact-box-label {
+            color: var(--stone);
+            font-size: 0.9rem;
+            font-weight: 500;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            padding: 6rem 0;
+            background: linear-gradient(135deg, var(--deep-ocean), var(--calm-water));
+            color: var(--pearl);
+            text-align: center;
+        }
+        
+        .cta-content h2 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-content p {
+            font-size: 1.25rem;
+            margin-bottom: 2rem;
+            opacity: 0.9;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-buttons .btn {
+            background: var(--pearl);
+            color: var(--deep-ocean);
+        }
+        
+        .cta-buttons .btn:hover {
+            background: var(--sky-blue);
+            transform: translateY(-2px);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--deep-ocean);
+            color: var(--pearl);
+            padding: 4rem 0 2rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            grid-template-columns: 2fr 1fr 1fr 1fr;
+            gap: 3rem;
+            margin-bottom: 3rem;
+        }
+        
+        .footer-about h3 {
+            margin-bottom: 1rem;
+            color: var(--light-water);
+        }
+        
+        .footer-about p {
+            color: rgba(255, 255, 255, 0.8);
+            line-height: 1.7;
+        }
+        
+        .footer-column h4 {
+            margin-bottom: 1rem;
+            color: var(--light-water);
+        }
+        
+        .footer-column ul {
+            list-style: none;
+        }
+        
+        .footer-column ul li {
+            margin-bottom: 0.5rem;
+        }
+        
+        .footer-column ul li a {
+            color: rgba(255, 255, 255, 0.7);
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        
+        .footer-column ul li a:hover {
+            color: var(--light-water);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            color: rgba(255, 255, 255, 0.6);
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .nav-menu {
+                position: fixed;
+                left: -100%;
+                top: 70px;
+                flex-direction: column;
+                background: var(--pearl);
+                width: 100%;
+                text-align: center;
+                transition: 0.3s;
+                box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+                padding: 2rem 0;
+            }
+            
+            .nav-menu.active {
+                left: 0;
+            }
+            
+            .mobile-toggle {
+                display: block;
+            }
+            
+            .hero-content {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+            
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .mission-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .programs-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .impact-content {
+                grid-template-columns: 1fr;
+            }
+            
+            .impact-visual {
+                grid-template-columns: 1fr 1fr;
+            }
+            
+            .footer-grid {
+                grid-template-columns: 1fr;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header id="header">
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">💧</span>
+                Still Water Foundation
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="programs.html" class="nav-link">Programs</a></li>
+                <li><a href="impact.html" class="nav-link">Impact</a></li>
+                <li><a href="get-involved.html" class="nav-link">Get Involved</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="donate.html" class="nav-cta">Donate</a></li>
+            </ul>
+            
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content">
+                <div class="hero-text">
+                    <p class="tagline">Like Still Water, We Run Deep</p>
+                    <h1>Empowering Youth Through Education</h1>
+                    <p>Breaking down barriers and creating pathways to success for underprivileged children and young adults worldwide. Together, we're building a future where every young person can reach their full potential.</p>
+                    <div class="hero-buttons">
+                        <a href="programs.html" class="btn btn-primary">Our Programs</a>
+                        <a href="impact.html" class="btn btn-secondary">See Our Impact</a>
+                    </div>
+                </div>
+                <div class="hero-visual">
+                    <div class="hero-image">
+                        <div class="hero-graphic">
+                            <svg viewBox="0 0 400 400" style="width: 100%; max-width: 400px;">
+                                <!-- Water ripples -->
+                                <circle cx="200" cy="200" r="60" fill="none" stroke="#0066cc" stroke-width="2" opacity="0.3">
+                                    <animate attributeName="r" from="60" to="180" dur="3s" repeatCount="indefinite" />
+                                    <animate attributeName="opacity" from="0.6" to="0" dur="3s" repeatCount="indefinite" />
+                                </circle>
+                                <circle cx="200" cy="200" r="60" fill="none" stroke="#4da6ff" stroke-width="2" opacity="0.3">
+                                    <animate attributeName="r" from="60" to="180" dur="3s" begin="1s" repeatCount="indefinite" />
+                                    <animate attributeName="opacity" from="0.6" to="0" dur="3s" begin="1s" repeatCount="indefinite" />
+                                </circle>
+                                <circle cx="200" cy="200" r="60" fill="none" stroke="#4ecdc4" stroke-width="2" opacity="0.3">
+                                    <animate attributeName="r" from="60" to="180" dur="3s" begin="2s" repeatCount="indefinite" />
+                                    <animate attributeName="opacity" from="0.6" to="0" dur="3s" begin="2s" repeatCount="indefinite" />
+                                </circle>
+                                
+                                <!-- Center drop -->
+                                <circle cx="200" cy="200" r="50" fill="#0066cc" opacity="0.8">
+                                    <animate attributeName="r" from="48" to="52" dur="2s" repeatCount="indefinite" />
+                                </circle>
+                                <text x="200" y="210" text-anchor="middle" font-size="40" fill="white">💧</text>
+                                
+                                <!-- Floating icons representing impact -->
+                                <text x="120" y="120" font-size="30" opacity="0.7">🎓</text>
+                                <text x="280" y="140" font-size="30" opacity="0.7">📚</text>
+                                <text x="300" y="250" font-size="30" opacity="0.7">💡</text>
+                                <text x="100" y="260" font-size="30" opacity="0.7">🌍</text>
+                                <text x="200" y="320" font-size="30" opacity="0.7">🤝</text>
+                            </svg>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Stats Section -->
+    <section class="stats-section">
+        <div class="container">
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <span class="stat-number" data-target="84">0</span>
+                    <span class="stat-label">Students Empowered</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="6">0</span>
+                    <span class="stat-label">Partner Schools</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="5">0</span>
+                    <span class="stat-label">Active Mentors</span>
+                </div>
+                <div class="stat-card">
+                    <span class="stat-number" data-target="94" data-suffix="%">0%</span>
+                    <span class="stat-label">Success Rate</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Mission Section -->
+    <section class="mission-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Mission</h2>
+                <p>Creating lasting change through education, mentorship, and opportunity</p>
+            </div>
+            
+            <div class="mission-grid">
+                <div class="mission-card">
+                    <div class="mission-icon">🎓</div>
+                    <h3>Quality Education</h3>
+                    <p>Ensuring inclusive and equitable quality education for all, aligned with SDG 4. We provide scholarships, resources, and support to break down financial and social barriers.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">🤝</div>
+                    <h3>Reducing Inequalities</h3>
+                    <p>Working towards SDG 10 by addressing disparities in education and career opportunities. We focus on marginalized communities, rural areas, and underserved populations.</p>
+                </div>
+                <div class="mission-card">
+                    <div class="mission-icon">🌱</div>
+                    <h3>Sustainable Development</h3>
+                    <p>Building tomorrow's leaders who understand global challenges and contribute to sustainable solutions. Education is the foundation for all development goals.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Programs Preview -->
+    <section class="programs-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Programs</h2>
+                <p>Comprehensive support at every stage of the educational journey</p>
+            </div>
+            
+            <div class="programs-grid">
+                <div class="program-card">
+                    <div class="program-image">📚</div>
+                    <div class="program-content">
+                        <h3>Scholarship Program</h3>
+                        <p>Merit and need-based scholarships ensuring continued education for deserving students from primary school through university.</p>
+                        <a href="programs.html#scholarships" class="learn-more">Learn More →</a>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-image">👥</div>
+                    <div class="program-content">
+                        <h3>Mentorship Initiative</h3>
+                        <p>Connecting students with professionals who provide guidance, support, and real-world insights for career development.</p>
+                        <a href="programs.html#mentorship" class="learn-more">Learn More →</a>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-image">💻</div>
+                    <div class="program-content">
+                        <h3>Digital & STEM Education</h3>
+                        <p>Bridging the digital divide with technology training, coding bootcamps, and STEM programs for future-ready skills.</p>
+                        <a href="programs.html#digital" class="learn-more">Learn More →</a>
+                    </div>
+                </div>
+                
+                <div class="program-card">
+                    <div class="program-image">🛠️</div>
+                    <div class="program-content">
+                        <h3>Skills & Entrepreneurship</h3>
+                        <p>Vocational training and entrepreneurship programs creating pathways to employment and self-reliance.</p>
+                        <a href="programs.html#skills" class="learn-more">Learn More →</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Impact Section -->
+    <section class="impact-section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Creating Waves of Change</h2>
+                <p>Our impact extends beyond numbers - we're transforming lives and communities</p>
+            </div>
+            
+            <div class="impact-content">
+                <div class="impact-text">
+                    <h3>From Local Action to Global Impact</h3>
+                    <p>We&rsquo;re just getting started, guided by a deep commitment to education and empowerment. What began as a small idea to support students in our community is now taking shape as an organization focused on creating lasting impact. While our journey is only beginning, our vision is clear: to help students grow into leaders who will uplift their communities.</p>
+
+                    <p>Through partnerships with schools, governments, and NGOs, we're creating sustainable change that aligns with global development goals while addressing local needs.</p>
+                    <a href="impact.html" class="btn btn-primary">View Full Impact Report</a>
+                </div>
+                <div class="impact-visual">
+                    <div class="impact-box">
+                        <span class="impact-box-number">2</span>
+                        <span class="impact-box-label">Partner Countries</span>
+                    </div>
+                    <div class="impact-box">
+                        <span class="impact-box-number">In Progress</span>
+                        <span class="impact-box-label">Graduate Support</span>
+                    </div>
+                    <div class="impact-box">
+                        <span class="impact-box-number">Ongoing</span>
+                        <span class="impact-box-label">Scholarship Development</span>
+                    </div>
+                    <div class="impact-box">
+                        <span class="impact-box-number">Early Stage</span>
+                        <span class="impact-box-label">Student Engagement</span>
+                    </div>
+                </div>
+                
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2>Be Part of the Ripple Effect</h2>
+                <p>Every contribution creates waves of opportunity. Join us in building a world where education knows no barriers.</p>
+                <div class="cta-buttons">
+                    <a href="donate.html" class="btn">Support a Student</a>
+                    <a href="get-involved.html" class="btn">Get Involved</a>
+                    <a href="contact.html" class="btn">Partner With Us</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>Still Water Foundation</h3>
+                    <p>Like still water that reflects clarity and depth, we provide steady, unwavering support for underprivileged youth. Our foundation represents calm strength, fostering environments where potential can flourish.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="impact.html">Our Impact</a></li>
+                        <li><a href="news.html">News & Events</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                        <li><a href="mentor.html">Become a Mentor</a></li>
+                        <li><a href="join.html">Join Our Team</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@stillwater.org">info@stillwater.org</a></li>
+                        <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+                        <li><a href="contact.html">Contact Form</a></li>
+                        <li><a href="newsletter.html">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Still Water Foundation. All rights reserved. | Empowering futures, one drop at a time.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileToggle = document.getElementById('mobileToggle');
+        const navMenu = document.getElementById('navMenu');
+        
+        mobileToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+        
+        // Header scroll effect
+        window.addEventListener('scroll', () => {
+            const header = document.getElementById('header');
+            if (window.scrollY > 50) {
+                header.classList.add('scrolled');
+            } else {
+                header.classList.remove('scrolled');
+            }
+        });
+        
+        // Animate numbers on scroll
+        const animateNumbers = () => {
+            const numbers = document.querySelectorAll('.stat-number');
+            
+            numbers.forEach(num => {
+                const target = parseInt(num.getAttribute('data-target'));
+                const suffix = num.getAttribute('data-suffix') || '';
+                let current = 0;
+                const increment = target / 100;
+                
+                const updateNumber = () => {
+                    if (current < target) {
+                        current += increment;
+                        if (current > target) current = target;
+                        num.textContent = Math.floor(current).toLocaleString() + suffix;
+                        requestAnimationFrame(updateNumber);
+                    } else {
+                        num.textContent = target.toLocaleString() + suffix;
+                    }
+                };
+                
+                updateNumber();
+            });
+        };
+        
+        // Intersection Observer for stats animation
+        const statsObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    animateNumbers();
+                    statsObserver.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.5 });
+        
+        const statsSection = document.querySelector('.stats-section');
+        if (statsSection) {
+            statsObserver.observe(statsSection);
+        }
+        
+        // Smooth scroll for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+    </script>
+</body>
+</html>

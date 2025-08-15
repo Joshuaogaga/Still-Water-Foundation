@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Contact Still Water Foundation - Get in touch with us for inquiries, support, partnerships, or to learn more about our educational programs.">
+    <title>Contact Us - Still Water Foundation</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header id="header">
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">💧</span>
+                Still Water Foundation
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="programs.html" class="nav-link">Programs</a></li>
+                <li><a href="impact.html" class="nav-link">Impact</a></li>
+                <li><a href="get-involved.html" class="nav-link">Get Involved</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><a href="donate.html" class="nav-cta">Donate</a></li>
+            </ul>
+            
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content text-center">
+                <h1 class="hero-title animate-fade-in-up">Contact Us</h1>
+                <p class="hero-subtitle animate-fade-in-up">We're here to help and answer any questions you might have</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Information -->
+    <section class="section">
+        <div class="container">
+            <div class="grid grid-3 gap-3">
+                <div class="card text-center">
+                    <div class="icon-box" style="margin: 0 auto 1.5rem; background: linear-gradient(135deg, var(--calm-water), var(--light-water)); color: white;">
+                        📍
+                    </div>
+                    <h4>Visit Us</h4>
+                    <p class="text-secondary">
+                        123 Education Lane<br>
+                        Hope District<br>
+                        City, State 12345<br>
+                        Country
+                    </p>
+                </div>
+                
+                <div class="card text-center">
+                    <div class="icon-box" style="margin: 0 auto 1.5rem; background: linear-gradient(135deg, var(--seafoam), var(--light-water)); color: white;">
+                        📞
+                    </div>
+                    <h4>Call Us</h4>
+                    <p class="text-secondary">
+                        Main: +1 (234) 567-8900<br>
+                        Toll Free: 1-800-STILL-WATER<br>
+                        WhatsApp: +1 (234) 567-8901<br>
+                        Mon-Fri: 9AM-6PM EST
+                    </p>
+                </div>
+                
+                <div class="card text-center">
+                    <div class="icon-box" style="margin: 0 auto 1.5rem; background: linear-gradient(135deg, var(--coral), var(--sunshine)); color: white;">
+                        ✉️
+                    </div>
+                    <h4>Email Us</h4>
+                    <p class="text-secondary">
+                        General: info@stillwater.org<br>
+                        Programs: programs@stillwater.org<br>
+                        Partnerships: partners@stillwater.org<br>
+                        Media: media@stillwater.org
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contact Form Section -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Send Us a Message</h2>
+                <p>We'll get back to you within 24-48 hours</p>
+            </div>
+            
+            <div class="grid grid-2 gap-4" style="align-items: start;">
+                <!-- Contact Form -->
+                <div>
+                    <form class="contact-form card" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                        <div class="grid grid-2 gap-3">
+                            <div class="form-group">
+                                <label class="form-label">First Name *</label>
+                                <input type="text" class="form-input" name="first_name" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Last Name *</label>
+                                <input type="text" class="form-input" name="last_name" required>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-2 gap-3">
+                            <div class="form-group">
+                                <label class="form-label">Email Address *</label>
+                                <input type="email" class="form-input" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label class="form-label">Phone Number</label>
+                                <input type="tel" class="form-input" name="phone">
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Subject *</label>
+                            <select class="form-select" name="subject" required>
+                                <option value="">Select a topic...</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="programs">Programs Information</option>
+                                <option value="volunteer">Volunteer Opportunities</option>
+                                <option value="partnership">Partnership Proposal</option>
+                                <option value="donation">Donation Questions</option>
+                                <option value="media">Media Inquiry</option>
+                                <option value="support">Technical Support</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">How did you hear about us?</label>
+                            <select class="form-select" name="referral_source">
+                                <option value="">Select an option...</option>
+                                <option value="search">Search Engine</option>
+                                <option value="social">Social Media</option>
+                                <option value="friend">Friend/Family</option>
+                                <option value="news">News/Media</option>
+                                <option value="event">Event</option>
+                                <option value="school">School/University</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label class="form-label">Message *</label>
+                            <textarea class="form-textarea" name="message" rows="6" required placeholder="Please tell us how we can help you..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="newsletter" style="margin-right: 0.5rem;">
+                                <span>Subscribe to our newsletter for updates</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Send Message</button>
+                    </form>
+                </div>
+                
+                <!-- FAQ & Quick Links -->
+                <div>
+                    <!-- Quick Answers -->
+                    <div class="card mb-3">
+                        <h4 style="color: var(--calm-water); margin-bottom: 1.5rem;">Quick Answers</h4>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5>How can I apply for a scholarship?</h5>
+                            <p class="text-secondary">Visit our <a href="programs.html#scholarships">Programs page</a> and click on "Apply for Scholarship" to access the application form.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5>How can I become a volunteer?</h5>
+                            <p class="text-secondary">Check our <a href="get-involved.html#volunteer">Get Involved page</a> for current volunteer opportunities and application process.</p>
+                        </div>
+                        
+                        <div style="margin-bottom: 1.5rem;">
+                            <h5>Are donations tax-deductible?</h5>
+                            <p class="text-secondary">Yes, Still Water Foundation is a registered 501(c)(3) nonprofit. All donations are tax-deductible to the extent allowed by law.</p>
+                        </div>
+                        
+                        <div>
+                            <h5>How is my donation used?</h5>
+                            <p class="text-secondary">87% of donations go directly to programs. See our <a href="impact.html">Impact page</a> for detailed financial reports.</p>
+                        </div>
+                    </div>
+                    
+                    <!-- Office Hours -->
+                    <div class="card mb-3">
+                        <h4 style="color: var(--calm-water); margin-bottom: 1.5rem;">Office Hours</h4>
+                        <div class="grid grid-2 gap-2">
+                            <div>
+                                <strong>Monday-Friday</strong><br>
+                                <span class="text-secondary">9:00 AM - 6:00 PM EST</span>
+                            </div>
+                            <div>
+                                <strong>Saturday</strong><br>
+                                <span class="text-secondary">10:00 AM - 2:00 PM EST</span>
+                            </div>
+                        </div>
+                        <hr style="margin: 1rem 0; opacity: 0.2;">
+                        <p class="text-secondary">Closed on Sundays and public holidays</p>
+                    </div>
+                    
+                    <!-- Social Media -->
+                    <div class="card">
+                        <h4 style="color: var(--calm-water); margin-bottom: 1.5rem;">Connect With Us</h4>
+                        <div class="grid grid-2 gap-2">
+                            <a href="#" class="btn btn-outline" style="text-align: center;">
+                                📘 Facebook
+                            </a>
+                            <a href="#" class="btn btn-outline" style="text-align: center;">
+                                🐦 Twitter
+                            </a>
+                            <a href="#" class="btn btn-outline" style="text-align: center;">
+                                💼 LinkedIn
+                            </a>
+                            <a href="#" class="btn btn-outline" style="text-align: center;">
+                                📷 Instagram
+                            </a>
+                            <a href="#" class="btn btn-outline" style="text-align: center;">
+                                ▶️ YouTube
+                            </a>
+                            <a href="#" class="btn btn-outline" style="text-align: center;">
+                                💬 WhatsApp
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Regional Offices -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Regional Offices</h2>
+                <p>Find the office nearest to you</p>
+            </div>
+            
+            <div class="grid grid-3 gap-3">
+                <div class="card">
+                    <h4 style="color: var(--calm-water);">🌍 Africa Regional Office</h4>
+                    <p class="text-secondary">
+                        Nairobi, Kenya<br>
+                        Phone: +254 20 123 4567<br>
+                        Email: africa@stillwater.org<br>
+                        <a href="#" class="text-primary">View on Map →</a>
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <h4 style="color: var(--calm-water);">🌏 Asia Regional Office</h4>
+                    <p class="text-secondary">
+                        New Delhi, India<br>
+                        Phone: +91 11 1234 5678<br>
+                        Email: asia@stillwater.org<br>
+                        <a href="#" class="text-primary">View on Map →</a>
+                    </p>
+                </div>
+                
+                <div class="card">
+                    <h4 style="color: var(--calm-water);">🌎 Americas Regional Office</h4>
+                    <p class="text-secondary">
+                        São Paulo, Brazil<br>
+                        Phone: +55 11 1234-5678<br>
+                        Email: americas@stillwater.org<br>
+                        <a href="#" class="text-primary">View on Map →</a>
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Emergency Contact -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="card" style="background: linear-gradient(135deg, #fff5f5, #ffe0e0); border-left: 4px solid var(--coral);">
+                <h4 style="color: var(--coral); margin-bottom: 1rem;">🚨 Emergency Support</h4>
+                <p>If you are a student in our program experiencing an emergency or crisis situation, please contact our 24/7 support line:</p>
+                <p style="font-size: 1.5rem; font-weight: bold; color: var(--coral); margin: 1rem 0;">
+                    Emergency Hotline: +1-800-HELP-NOW
+                </p>
+                <p class="text-secondary">Available 24 hours a day, 7 days a week for enrolled students</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Newsletter Signup -->
+    <section class="section">
+        <div class="container">
+            <div class="card" style="background: linear-gradient(135deg, var(--sky-blue), var(--mist)); text-align: center; padding: 3rem;">
+                <h3>Stay Connected</h3>
+                <p style="margin: 1.5rem 0;">Subscribe to our newsletter for updates on our programs, success stories, and ways to get involved.</p>
+                
+                <form class="newsletter-form" style="max-width: 500px; margin: 0 auto;">
+                    <div style="display: flex; gap: 1rem;">
+                        <input type="email" class="form-input" placeholder="Enter your email address" required style="flex: 1;">
+                        <button type="submit" class="btn btn-primary">Subscribe</button>
+                    </div>
+                </form>
+                
+                <p class="text-secondary mt-3" style="font-size: 0.9rem;">We respect your privacy. Unsubscribe at any time.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Map Section (Placeholder) -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Find Us</h2>
+                <p>Visit our headquarters</p>
+            </div>
+            
+            <div class="card" style="height: 400px; background: linear-gradient(135deg, #e0e0e0, #f5f5f5); display: flex; align-items: center; justify-content: center;">
+                <div class="text-center">
+                    <p style="font-size: 3rem; margin-bottom: 1rem;">🗺️</p>
+                    <h4>Interactive Map</h4>
+                    <p class="text-secondary">Google Maps integration will be added here</p>
+                    <a href="https://maps.google.com" target="_blank" class="btn btn-outline mt-3">Open in Google Maps</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section" style="background: linear-gradient(135deg, var(--deep-ocean), var(--calm-water)); color: white;">
+        <div class="container text-center">
+            <h2 style="color: white; margin-bottom: 1.5rem;">Let's Create Change Together</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95;">
+                Whether you have a question, want to help, or need support, we're here for you.
+            </p>
+            <div class="flex-center gap-3">
+                <a href="get-involved.html" class="btn btn-secondary">Get Involved</a>
+                <a href="programs.html" class="btn btn-secondary">Our Programs</a>
+                <a href="donate.html" class="btn btn-secondary">Donate</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>Still Water Foundation</h3>
+                    <p>Breaking barriers to education and creating pathways to success for underprivileged youth worldwide.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="impact.html">Our Impact</a></li>
+                        <li><a href="news.html">News & Events</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                        <li><a href="mentor.html">Become a Mentor</a></li>
+                        <li><a href="get-involved.html#team">Join Our Team</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@stillwater.org">info@stillwater.org</a></li>
+                        <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+                        <li><a href="contact.html">Contact Form</a></li>
+                        <li><a href="newsletter.html">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Still Water Foundation. All rights reserved. | Empowering futures, one drop at a time.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

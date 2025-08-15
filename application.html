@@ -778,129 +778,137 @@
         </div>
     </footer>
 
-    <!-- Main JavaScript -->
-    <script src="js/main.js"></script>
-    
-    <!-- Application Form JavaScript -->
-    <script>
-        let currentStep = 1;
-        const totalSteps = 4;
+<!-- Application Form JavaScript -->
+<script>
+    let currentStep = 1;
+    const totalSteps = 4;
 
-        function showStep(step) {
-            // Hide all steps
-            document.querySelectorAll('.form-step').forEach(s => s.classList.remove('active'));
-            
-            // Show current step
-            document.getElementById(`step-${step}`).classList.add('active');
-            
-            // Update progress
-            updateProgress(step);
-            
-            // Update navigation buttons
-            updateNavigation(step);
-            
-            // Update step indicators
-            updateStepIndicators(step);
+    function showStep(step) {
+        // Hide all steps
+        for (let i = 1; i <= totalSteps; i++) {
+            document.getElementById('step-' + i).classList.remove('active');
         }
-
-        function updateProgress(step) {
-            const progressLine = document.getElementById('progressLine');
-            const percentage = ((step - 1) / (totalSteps - 1)) * 100;
-            progressLine.style.width = `${percentage}%`;
+        
+        // Show current step
+        document.getElementById('step-' + step).classList.add('active');
+        
+        // Update progress
+        const progressLine = document.getElementById('progressLine');
+        const percentage = ((step - 1) / (totalSteps - 1)) * 100;
+        progressLine.style.width = percentage + '%';
+        
+        // Update navigation buttons
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const submitBtn = document.getElementById('submitBtn');
+        
+        prevBtn.style.display = step > 1 ? 'block' : 'none';
+        
+        if (step < totalSteps) {
+            nextBtn.style.display = 'block';
+            submitBtn.style.display = 'none';
+        } else {
+            nextBtn.style.display = 'none';
+            submitBtn.style.display = 'block';
+            populateReview();
         }
-
-        function updateStepIndicators(step) {
-            const steps = document.querySelectorAll('.step');
-            steps.forEach((stepEl, index) => {
-                stepEl.classList.remove('active', 'completed');
-                if (index + 1 < step) {
-                    stepEl.classList.add('completed');
-                } else if (index + 1 === step) {
-                    stepEl.classList.add('active');
-                }
-            });
-        }
-
-        function updateNavigation(step) {
-            const prevBtn = document.getElementById('prevBtn');
-            const nextBtn = document.getElementById('nextBtn');
-            const submitBtn = document.getElementById('submitBtn');
-            
-            prevBtn.style.display = step > 1 ? 'block' : 'none';
-            
-            if (step < totalSteps) {
-                nextBtn.style.display = 'block';
-                submitBtn.style.display = 'none';
-            } else {
-                nextBtn.style.display = 'none';
-                submitBtn.style.display = 'block';
-                populateReview();
+        
+        // Update step indicators
+        const steps = document.querySelectorAll('.step');
+        for (let i = 0; i < steps.length; i++) {
+            const stepEl = steps[i];
+            stepEl.classList.remove('active', 'completed');
+            if (i + 1 < step) {
+                stepEl.classList.add('completed');
+            } else if (i + 1 === step) {
+                stepEl.classList.add('active');
             }
         }
+    }
 
-        function validateStep(step) {
-            const currentStepEl = document.getElementById(`step-${step}`);
-            const requiredFields = currentStepEl.querySelectorAll('[required]');
-            
-            for (let field of requiredFields) {
-                if (!field.value.trim()) {
-                    field.focus();
-                    field.style.borderColor = '#e74c3c';
-                    setTimeout(() => {
-                        field.style.borderColor = '';
-                    }, 3000);
-                    return false;
-                }
+    function validateStep(step) {
+        const currentStepEl = document.getElementById('step-' + step);
+        const requiredFields = currentStepEl.querySelectorAll('[required]');
+        
+        for (let i = 0; i < requiredFields.length; i++) {
+            const field = requiredFields[i];
+            if (!field.value.trim()) {
+                field.focus();
+                field.style.borderColor = '#e74c3c';
+                setTimeout(function() {
+                    field.style.borderColor = '';
+                }, 3000);
+                return false;
             }
-            return true;
         }
+        return true;
+    }
 
-        function populateReview() {
-            const formData = new FormData(document.getElementById('applicationForm'));
-            const reviewContent = document.getElementById('reviewContent');
-            
-            const programNames = {
-                'scholarship': 'Educational Scholarship Program',
-                'mentorship': 'Mentorship Initiative',
-                'digital-stem': 'Digital Literacy & STEM Education',
-                'skills-training': 'Vocational & Skills Training',
-                'entrepreneurship': 'Entrepreneurship & Innovation'
-            };
-            
-            reviewContent.innerHTML = `
-                <h4 style="margin-bottom: 1rem; color: var(--calm-water);">Application Summary</h4>
-                <div class="grid grid-2 gap-2">
-                    <div><strong>Name:</strong> ${formData.get('firstName')} ${formData.get('lastName')}</div>
-                    <div><strong>Email:</strong> ${formData.get('email')}</div>
-                    <div><strong>Phone:</strong> ${formData.get('phone')}</div>
-                    <div><strong>Education Level:</strong> ${formData.get('currentEducation')}</div>
-                    <div><strong>School:</strong> ${formData.get('schoolName')}</div>
-                    <div><strong>Field of Study:</strong> ${formData.get('fieldOfStudy')}</div>
-                    <div style="grid-column: 1 / -1;"><strong>Program:</strong> ${programNames[formData.get('program')] || formData.get('program')}</div>
-                </div>
-                <div style="margin-top: 1rem;">
-                    <p><strong>Educational Goals:</strong></p>
-                    <p style="background: white; padding: 1rem; border-radius: 6px; font-style: italic;">"${formData.get('goals')}"</p>
-                </div>
-            `;
-        }
+    function populateReview() {
+        const formData = new FormData(document.getElementById('applicationForm'));
+        const reviewContent = document.getElementById('reviewContent');
+        
+        const programNames = {
+            'scholarship': 'Educational Scholarship Program',
+            'mentorship': 'Mentorship Initiative',
+            'digital-stem': 'Digital Literacy & STEM Education',
+            'skills-training': 'Vocational & Skills Training',
+            'entrepreneurship': 'Entrepreneurship & Innovation'
+        };
+        
+        const firstName = formData.get('firstName') || '';
+        const lastName = formData.get('lastName') || '';
+        const email = formData.get('email') || '';
+        const phone = formData.get('phone') || '';
+        const education = formData.get('currentEducation') || '';
+        const school = formData.get('schoolName') || '';
+        const field = formData.get('fieldOfStudy') || '';
+        const program = programNames[formData.get('program')] || formData.get('program') || '';
+        const goals = formData.get('goals') || 'Not provided';
+        
+        reviewContent.innerHTML = 
+            '<h4 style="margin-bottom: 1rem; color: var(--calm-water);">Application Summary</h4>' +
+            '<div class="grid grid-2 gap-2">' +
+            '<div><strong>Name:</strong> ' + firstName + ' ' + lastName + '</div>' +
+            '<div><strong>Email:</strong> ' + email + '</div>' +
+            '<div><strong>Phone:</strong> ' + phone + '</div>' +
+            '<div><strong>Education Level:</strong> ' + education + '</div>' +
+            '<div><strong>School:</strong> ' + school + '</div>' +
+            '<div><strong>Field of Study:</strong> ' + field + '</div>' +
+            '<div style="grid-column: 1 / -1;"><strong>Program:</strong> ' + program + '</div>' +
+            '</div>' +
+            '<div style="margin-top: 1rem;">' +
+            '<p><strong>Educational Goals:</strong></p>' +
+            '<p style="background: white; padding: 1rem; border-radius: 6px; font-style: italic;">"' + goals + '"</p>' +
+            '</div>';
+    }
 
-        // Event listeners
-        document.getElementById('nextBtn').addEventListener('click', () => {
+    // Wait for page to load
+    document.addEventListener('DOMContentLoaded', function() {
+        // Next button
+        document.getElementById('nextBtn').addEventListener('click', function() {
             if (validateStep(currentStep)) {
                 currentStep++;
                 showStep(currentStep);
             }
         });
 
-        document.getElementById('prevBtn').addEventListener('click', () => {
+        // Previous button
+        document.getElementById('prevBtn').addEventListener('click', function() {
             currentStep--;
             showStep(currentStep);
         });
 
         // Form submission
-        document.getElementById('applicationForm').addEventListener('submit', (e) => {
+        document.getElementById('applicationForm').addEventListener('submit', function(e) {
             e.preventDefault();
+            
+            // Check terms
+            const termsAccepted = document.getElementById('termsAccept').checked;
+            if (!termsAccepted) {
+                alert('Please accept the terms and conditions to continue.');
+                return;
+            }
             
             if (!validateStep(currentStep)) {
                 return;
@@ -908,35 +916,38 @@
             
             // Show loading state
             const submitBtn = document.getElementById('submitBtn');
-            const originalText = submitBtn.textContent;
             submitBtn.textContent = 'Submitting...';
             submitBtn.disabled = true;
             
-            // Always show success message after 2 seconds (for demo/testing)
-            setTimeout(() => {
+            // Always show success message after 2 seconds
+            setTimeout(function() {
                 // Hide form and show success message
                 document.getElementById('applicationForm').style.display = 'none';
                 document.getElementById('progressSteps').style.display = 'none';
+                document.getElementById('formNavigation').style.display = 'none';
                 document.getElementById('successMessage').style.display = 'block';
                 
                 // Scroll to top
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }, 2000);
             
-            // Try to submit form via Netlify (if available)
-            const formData = new FormData(e.target);
+            // Submit to Netlify
+            const formData = new FormData(this);
             fetch('/', {
                 method: 'POST',
                 headers: { "Content-Type": "application/x-www-form-urlencoded" },
                 body: new URLSearchParams(formData).toString()
-            }).catch(error => {
+            }).then(function() {
+                console.log('Form submitted successfully');
+            }).catch(function(error) {
                 console.log('Form submission note:', error);
-                // Form will still show success message above
+                // Success message still shows regardless
             });
         });
 
         // Initialize form
         showStep(1);
-    </script>
+    });
+</script>
 </body>
 </html>

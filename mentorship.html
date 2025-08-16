@@ -1,0 +1,498 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join Still Water Foundation's mentorship program - find a mentor or become one to help students achieve their educational goals.">
+    <title>Mentorship Program - Still Water Foundation</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
+    
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: #ffffff;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--calm-water);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+        
+        .form-section {
+            display: none;
+            animation: fadeIn 0.3s ease;
+        }
+        
+        .form-section.active {
+            display: block;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        
+        .radio-group {
+            display: flex;
+            gap: 2rem;
+            margin: 1rem 0;
+        }
+        
+        .radio-option {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            cursor: pointer;
+            padding: 1rem 1.5rem;
+            border: 2px solid #e1e8ed;
+            border-radius: 10px;
+            transition: all 0.3s ease;
+            flex: 1;
+        }
+        
+        .radio-option:hover {
+            border-color: var(--calm-water);
+            background: #f8f9fd;
+        }
+        
+        .radio-option input[type="radio"]:checked + .radio-content {
+            color: var(--calm-water);
+            font-weight: 600;
+        }
+        
+        .radio-option:has(input[type="radio"]:checked) {
+            border-color: var(--calm-water);
+            background: #f8f9fd;
+        }
+        
+        .radio-content {
+            text-align: center;
+            flex: 1;
+        }
+        
+        .radio-content h4 {
+            margin: 0 0 0.5rem 0;
+            font-size: 1.1rem;
+        }
+        
+        .radio-content p {
+            margin: 0;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        @media (max-width: 768px) {
+            .radio-group {
+                flex-direction: column;
+                gap: 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Navigation -->
+    <header id="header">
+        <nav class="container">
+            <a href="index.html" class="logo">
+                <span class="logo-icon">💧</span>
+                Still Water Foundation
+            </a>
+            
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="about.html" class="nav-link">About</a></li>
+                <li><a href="programs.html" class="nav-link">Programs</a></li>
+                <li><a href="impact.html" class="nav-link">Impact</a></li>
+                <li><a href="get-involved.html" class="nav-link">Get Involved</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><a href="donate.html" class="nav-cta">Donate</a></li>
+            </ul>
+            
+            <button class="mobile-toggle" id="mobileToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-content text-center">
+                <h1 class="hero-title animate-fade-in-up">Mentorship Program</h1>
+                <p class="hero-subtitle animate-fade-in-up">Connecting students with professionals for guidance and growth</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Program Overview -->
+    <section class="section">
+        <div class="container">
+            <div style="margin-bottom: 2rem;">
+                <a href="programs.html" class="btn btn-outline" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                    ← Back to Programs
+                </a>
+            </div>
+
+            <div class="grid grid-2 gap-4" style="margin-bottom: 3rem;">
+                <div class="card">
+                    <h3 style="color: var(--calm-water); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        🎓 For Students
+                    </h3>
+                    <p>Get paired with a professional mentor who can provide guidance on your educational journey, career planning, and personal development.</p>
+                    <ul style="line-height: 1.6; margin-top: 1rem;">
+                        <li>One-on-one guidance from industry professionals</li>
+                        <li>Career advice and networking opportunities</li>
+                        <li>Academic support and study strategies</li>
+                        <li>Personal development and life skills</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h3 style="color: var(--calm-water); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                        👥 For Professionals
+                    </h3>
+                    <p>Share your knowledge and experience while making a meaningful impact on a student's life and future success.</p>
+                    <ul style="line-height: 1.6; margin-top: 1rem;">
+                        <li>Make a direct impact on someone's future</li>
+                        <li>Develop leadership and coaching skills</li>
+                        <li>Flexible time commitment (2-4 hours/month)</li>
+                        <li>Connect with other like-minded professionals</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Application Form -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Join Our Mentorship Program</h2>
+                <p>Choose your path and get started today</p>
+            </div>
+            
+            <div style="max-width: 700px; margin: 0 auto;">
+                <div class="card">
+                    <form id="mentorshipForm" name="mentorship-program" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+                        <!-- Hidden honeypot field -->
+                        <div style="display: none;">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </div>
+
+                        <!-- Role Selection -->
+                        <div class="form-group">
+                            <label style="font-size: 1.1rem; margin-bottom: 1rem;">I want to:</label>
+                            <div class="radio-group">
+                                <label class="radio-option">
+                                    <input type="radio" name="role" value="find-mentor" onchange="toggleFormSections()">
+                                    <div class="radio-content">
+                                        <h4>🎓 Find a Mentor</h4>
+                                        <p>Get guidance from a professional</p>
+                                    </div>
+                                </label>
+                                <label class="radio-option">
+                                    <input type="radio" name="role" value="become-mentor" onchange="toggleFormSections()">
+                                    <div class="radio-content">
+                                        <h4>👥 Become a Mentor</h4>
+                                        <p>Help guide a student</p>
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <!-- Basic Information (for both) -->
+                        <div id="basicInfo" class="form-section">
+                            <h4 style="color: var(--calm-water); margin-bottom: 1rem;">Basic Information</h4>
+                            
+                            <div class="grid grid-2 gap-2">
+                                <div class="form-group">
+                                    <label for="firstName">First Name</label>
+                                    <input type="text" id="firstName" name="firstName" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lastName">Last Name</label>
+                                    <input type="text" id="lastName" name="lastName" required>
+                                </div>
+                            </div>
+                            
+                            <div class="grid grid-2 gap-2">
+                                <div class="form-group">
+                                    <label for="email">Email Address</label>
+                                    <input type="email" id="email" name="email" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="phone">Phone Number</label>
+                                    <input type="tel" id="phone" name="phone">
+                                </div>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="age">Age</label>
+                                <select id="age" name="age" required>
+                                    <option value="">Select your age range...</option>
+                                    <option value="16-18">16-18</option>
+                                    <option value="19-22">19-22</option>
+                                    <option value="23-25">23-25</option>
+                                    <option value="26-30">26-30</option>
+                                    <option value="31-40">31-40</option>
+                                    <option value="41-50">41-50</option>
+                                    <option value="50+">50+</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Student-specific fields -->
+                        <div id="studentSection" class="form-section">
+                            <h4 style="color: var(--calm-water); margin-bottom: 1rem;">Student Information</h4>
+                            
+                            <div class="form-group">
+                                <label for="educationLevel">Current Education Level</label>
+                                <select id="educationLevel" name="educationLevel">
+                                    <option value="">Select your education level...</option>
+                                    <option value="high-school">High School Student</option>
+                                    <option value="high-school-graduate">High School Graduate</option>
+                                    <option value="college-student">College Student</option>
+                                    <option value="college-graduate">College Graduate</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="fieldOfInterest">Field of Interest/Study</label>
+                                <input type="text" id="fieldOfInterest" name="fieldOfInterest" placeholder="e.g., Computer Science, Medicine, Business">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="goals">What are your educational/career goals?</label>
+                                <textarea id="goals" name="goals" placeholder="Tell us about your aspirations and what you hope to achieve..."></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="mentorshipNeeds">What kind of guidance are you looking for?</label>
+                                <textarea id="mentorshipNeeds" name="mentorshipNeeds" placeholder="e.g., career advice, study strategies, networking, personal development..."></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Mentor-specific fields -->
+                        <div id="mentorSection" class="form-section">
+                            <h4 style="color: var(--calm-water); margin-bottom: 1rem;">Professional Information</h4>
+                            
+                            <div class="form-group">
+                                <label for="profession">Current Profession/Industry</label>
+                                <input type="text" id="profession" name="profession" placeholder="e.g., Software Engineer, Doctor, Teacher">
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="experience">Years of Professional Experience</label>
+                                <select id="experience" name="experience">
+                                    <option value="">Select experience level...</option>
+                                    <option value="3-5">3-5 years</option>
+                                    <option value="6-10">6-10 years</option>
+                                    <option value="11-15">11-15 years</option>
+                                    <option value="16-20">16-20 years</option>
+                                    <option value="20+">20+ years</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="expertise">Areas of Expertise</label>
+                                <textarea id="expertise" name="expertise" placeholder="What skills, knowledge, or experience can you share? (e.g., technical skills, leadership, entrepreneurship)"></textarea>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="availability">Time Availability</label>
+                                <select id="availability" name="availability">
+                                    <option value="">How much time can you commit monthly?</option>
+                                    <option value="2-3 hours">2-3 hours per month</option>
+                                    <option value="4-6 hours">4-6 hours per month</option>
+                                    <option value="6+ hours">6+ hours per month</option>
+                                </select>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="motivation">Why do you want to become a mentor?</label>
+                                <textarea id="motivation" name="motivation" placeholder="What motivates you to help students? What impact do you hope to make?"></textarea>
+                            </div>
+                        </div>
+
+                        <!-- Submit button (hidden until role selected) -->
+                        <div id="submitSection" class="form-section" style="text-align: center; padding-top: 1rem; border-top: 1px solid #eee;">
+                            <button type="submit" class="btn btn-primary">Submit Application</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>How Our Mentorship Program Works</h2>
+                <p>Simple steps to get you connected</p>
+            </div>
+            
+            <div class="grid grid-3 gap-3">
+                <div class="card text-center">
+                    <div style="width: 60px; height: 60px; background: var(--calm-water); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1rem;">
+                        1
+                    </div>
+                    <h4>Apply</h4>
+                    <p>Fill out the form above with your information and goals or expertise.</p>
+                </div>
+                
+                <div class="card text-center">
+                    <div style="width: 60px; height: 60px; background: var(--calm-water); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1rem;">
+                        2
+                    </div>
+                    <h4>Get Matched</h4>
+                    <p>We carefully pair students with mentors based on interests and goals.</p>
+                </div>
+                
+                <div class="card text-center">
+                    <div style="width: 60px; height: 60px; background: var(--calm-water); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 1.5rem; margin: 0 auto 1rem;">
+                        3
+                    </div>
+                    <h4>Connect & Grow</h4>
+                    <p>Start your mentorship journey with regular meetings and guidance.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Call to Action -->
+    <section class="section" style="background: linear-gradient(135deg, var(--deep-ocean), var(--calm-water)); color: white;">
+        <div class="container text-center">
+            <h2 style="color: white; margin-bottom: 1.5rem;">Questions About Mentorship?</h2>
+            <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95;">
+                We're here to help you get started on your mentorship journey
+            </p>
+            <div class="flex-center gap-3">
+                <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                <a href="programs.html" class="btn btn-secondary">View All Programs</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-about">
+                    <h3>Still Water Foundation</h3>
+                    <p>Breaking barriers to education and creating pathways to success for underprivileged youth worldwide.</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Quick Links</h4>
+                    <ul>
+                        <li><a href="about.html">About Us</a></li>
+                        <li><a href="programs.html">Programs</a></li>
+                        <li><a href="impact.html">Our Impact</a></li>
+                        <li><a href="news.html">News & Events</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Get Involved</h4>
+                    <ul>
+                        <li><a href="donate.html">Donate</a></li>
+                        <li><a href="volunteer.html">Volunteer</a></li>
+                        <li><a href="mentor.html">Become a Mentor</a></li>
+                        <li><a href="get-involved.html#team">Join Our Team</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h4>Contact</h4>
+                    <ul>
+                        <li><a href="mailto:info@stillwater.org">info@stillwater.org</a></li>
+                        <li><a href="tel:+1234567890">+1 (234) 567-890</a></li>
+                        <li><a href="contact.html">Contact Form</a></li>
+                        <li><a href="newsletter.html">Newsletter</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; 2025 Still Water Foundation. All rights reserved. | Empowering futures, one drop at a time.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        function toggleFormSections() {
+            const roleInputs = document.querySelectorAll('input[name="role"]');
+            const selectedRole = document.querySelector('input[name="role"]:checked')?.value;
+            
+            // Hide all sections first
+            document.getElementById('basicInfo').classList.remove('active');
+            document.getElementById('studentSection').classList.remove('active');
+            document.getElementById('mentorSection').classList.remove('active');
+            document.getElementById('submitSection').classList.remove('active');
+            
+            if (selectedRole) {
+                // Show basic info for any selection
+                document.getElementById('basicInfo').classList.add('active');
+                document.getElementById('submitSection').classList.add('active');
+                
+                // Show specific section based on role
+                if (selectedRole === 'find-mentor') {
+                    document.getElementById('studentSection').classList.add('active');
+                } else if (selectedRole === 'become-mentor') {
+                    document.getElementById('mentorSection').classList.add('active');
+                }
+            }
+        }
+
+        // Handle form submission
+        document.getElementById('mentorshipForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Show success message
+            alert('Thank you for your interest in our mentorship program! We will review your application and contact you within 1-2 weeks to discuss next steps.');
+            
+            // Reset form
+            this.reset();
+            toggleFormSections();
+        });
+    </script>
+
+    <!-- Main JavaScript -->
+    <script src="js/main.js"></script>
+</body>
+</html>

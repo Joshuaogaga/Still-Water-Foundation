@@ -3,14 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Donate to Still Water Foundation - Support education for underprivileged youth. Every contribution creates lasting change.">
-    <title>Donate - Still Water Foundation</title>
+    <meta name="description" content="Support Still Water Foundation's mission to provide educational opportunities for underprivileged youth in Nigeria and across Africa.">
+    <title>Support Our Mission - Still Water Foundation</title>
     
     <!-- Favicon -->
     <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>💧</text></svg>">
     
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: #ffffff;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--calm-water);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+    </style>
 </head>
 <body>
     <!-- Header Navigation -->
@@ -43,450 +82,292 @@
     <section class="hero">
         <div class="container">
             <div class="hero-content text-center">
-                <h1 class="hero-title animate-fade-in-up">Make a Difference Today</h1>
-                <p class="hero-subtitle animate-fade-in-up">Your generosity transforms lives and builds futures</p>
+                <h1 class="hero-title animate-fade-in-up">Support Our Mission</h1>
+                <p class="hero-subtitle animate-fade-in-up">Help us expand educational opportunities across Africa</p>
             </div>
         </div>
     </section>
 
-    <!-- Impact of Donation -->
+    <!-- Why Support Us -->
     <section class="section">
         <div class="container">
             <div class="section-header">
-                <h2>Your Impact</h2>
-                <p>See exactly how your donation creates change</p>
-            </div>
-            
-            <div class="grid grid-4 gap-3">
-                <div class="card text-center">
-                    <div style="font-size: 2.5rem; color: var(--calm-water); font-weight: bold; margin-bottom: 0.5rem;">$25</div>
-                    <p class="text-secondary">Provides school supplies for one student for a semester</p>
-                </div>
-                
-                <div class="card text-center">
-                    <div style="font-size: 2.5rem; color: var(--calm-water); font-weight: bold; margin-bottom: 0.5rem;">$50</div>
-                    <p class="text-secondary">Covers uniform and shoes for a primary school student</p>
-                </div>
-                
-                <div class="card text-center">
-                    <div style="font-size: 2.5rem; color: var(--calm-water); font-weight: bold; margin-bottom: 0.5rem;">$100</div>
-                    <p class="text-secondary">Funds one month of mentorship and tutoring</p>
-                </div>
-                
-                <div class="card text-center">
-                    <div style="font-size: 2.5rem; color: var(--calm-water); font-weight: bold; margin-bottom: 0.5rem;">$500</div>
-                    <p class="text-secondary">Sponsors a student's education for an entire year</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Donation Options -->
-    <section class="section bg-light">
-        <div class="container">
-            <div class="section-header">
-                <h2>Ways to Give</h2>
-                <p>Choose the donation method that works best for you</p>
-            </div>
-            
-            <div class="grid grid-2 gap-4">
-                <!-- One-Time Donation -->
-                <div class="card">
-                    <h3 style="color: var(--calm-water); margin-bottom: 1.5rem;">One-Time Donation</h3>
-                    <p class="mb-3">Make an immediate impact with a single contribution of any amount.</p>
-                    
-                    <div class="grid grid-3 gap-2 mb-3">
-                        <button class="btn btn-outline">$25</button>
-                        <button class="btn btn-outline">$50</button>
-                        <button class="btn btn-outline">$100</button>
-                        <button class="btn btn-outline">$250</button>
-                        <button class="btn btn-outline">$500</button>
-                        <button class="btn btn-outline">$1,000</button>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">Custom Amount</label>
-                        <input type="number" class="form-input" placeholder="Enter amount in USD">
-                    </div>
-                    
-                    <button class="btn btn-primary" style="width: 100%;">Donate Now</button>
-                </div>
-                
-                <!-- Monthly Giving -->
-                <div class="card" style="border: 2px solid var(--calm-water);">
-                    <div style="position: absolute; top: -12px; right: 20px; background: var(--calm-water); color: white; padding: 0.25rem 1rem; border-radius: 20px; font-size: 0.9rem;">
-                        Recommended
-                    </div>
-                    <h3 style="color: var(--calm-water); margin-bottom: 1.5rem;">Monthly Giving</h3>
-                    <p class="mb-3">Join our Circle of Hope with recurring monthly donations for sustained impact.</p>
-                    
-                    <div class="grid grid-3 gap-2 mb-3">
-                        <button class="btn btn-outline">$10/mo</button>
-                        <button class="btn btn-outline">$25/mo</button>
-                        <button class="btn btn-outline">$50/mo</button>
-                        <button class="btn btn-outline">$100/mo</button>
-                        <button class="btn btn-outline">$250/mo</button>
-                        <button class="btn btn-outline">Other</button>
-                    </div>
-                    
-                    <div class="card" style="background: var(--mist); margin-bottom: 1rem;">
-                        <p style="font-size: 0.9rem; margin: 0;">
-                            <strong>💧 Circle of Hope Benefits:</strong><br>
-                            • Quarterly impact reports<br>
-                            • Exclusive updates from the field<br>
-                            • Annual donor appreciation event<br>
-                            • Tax benefits maximized
-                        </p>
-                    </div>
-                    
-                    <button class="btn btn-primary" style="width: 100%;">Start Monthly Giving</button>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Other Ways to Give -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Other Ways to Support</h2>
-                <p>Multiple options to maximize your impact</p>
-            </div>
-            
-            <div class="grid grid-3 gap-3">
-                <div class="card text-center">
-                    <div class="icon-box" style="margin: 0 auto 1.5rem;">🎓</div>
-                    <h4>Sponsor a Student</h4>
-                    <p class="text-secondary">Directly support a student's entire educational journey with full sponsorship.</p>
-                    <a href="#sponsor" class="btn btn-outline mt-3">Learn More</a>
-                </div>
-                
-                <div class="card text-center">
-                    <div class="icon-box" style="margin: 0 auto 1.5rem;">🏢</div>
-                    <h4>Corporate Giving</h4>
-                    <p class="text-secondary">Partner with us through corporate donations, matching gifts, and CSR programs.</p>
-                    <a href="#corporate" class="btn btn-outline mt-3">Learn More</a>
-                </div>
-                
-                <div class="card text-center">
-                    <div class="icon-box" style="margin: 0 auto 1.5rem;">📜</div>
-                    <h4>Legacy Giving</h4>
-                    <p class="text-secondary">Create lasting impact through planned giving, bequests, and endowments.</p>
-                    <a href="#legacy" class="btn btn-outline mt-3">Learn More</a>
-                </div>
-                
-                <div class="card text-center">
-                    <div class="icon-box" style="margin: 0 auto 1.5rem;">💳</div>
-                    <h4>Stock & Crypto</h4>
-                    <p class="text-secondary">Donate stocks, bonds, or cryptocurrency for potential tax advantages.</p>
-                    <a href="#stocks" class="btn btn-outline mt-3">Learn More</a>
-                </div>
-                
-                <div class="card text-center">
-                    <div class="icon-box" style="margin: 0 auto 1.5rem;">🎁</div>
-                    <h4>In-Kind Donations</h4>
-                    <p class="text-secondary">Donate supplies, equipment, or professional services to support our programs.</p>
-                    <a href="#inkind" class="btn btn-outline mt-3">Learn More</a>
-                </div>
-                
-                <div class="card text-center">
-                    <div class="icon-box" style="margin: 0 auto 1.5rem;">🎉</div>
-                    <h4>Fundraise</h4>
-                    <p class="text-secondary">Start your own fundraising campaign for birthdays, events, or challenges.</p>
-                    <a href="#fundraise" class="btn btn-outline mt-3">Start Campaign</a>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Where Your Money Goes -->
-    <section class="section bg-light">
-        <div class="container">
-            <div class="section-header">
-                <h2>Where Your Money Goes</h2>
-                <p>We're committed to transparency and efficiency</p>
+                <h2>Why Support Still Water Foundation?</h2>
+                <p>Your contribution directly impacts students' lives and communities across Nigeria</p>
             </div>
             
             <div class="grid grid-2 gap-4" style="align-items: center;">
                 <div>
-                    <div class="card">
-                        <h4 style="color: var(--calm-water); margin-bottom: 1.5rem;">Fund Allocation</h4>
-                        
-                        <div style="margin-bottom: 1.5rem;">
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                <span>Programs & Services</span>
-                                <strong>87%</strong>
-                            </div>
-                            <div style="background: #e0e0e0; height: 20px; border-radius: 10px; overflow: hidden;">
-                                <div style="width: 87%; background: linear-gradient(90deg, var(--calm-water), var(--light-water)); height: 100%;"></div>
-                            </div>
-                        </div>
-                        
-                        <div style="margin-bottom: 1.5rem;">
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                <span>Administration</span>
-                                <strong>8%</strong>
-                            </div>
-                            <div style="background: #e0e0e0; height: 20px; border-radius: 10px; overflow: hidden;">
-                                <div style="width: 8%; background: linear-gradient(90deg, var(--seafoam), var(--light-water)); height: 100%;"></div>
-                            </div>
-                        </div>
-                        
-                        <div>
-                            <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
-                                <span>Fundraising</span>
-                                <strong>5%</strong>
-                            </div>
-                            <div style="background: #e0e0e0; height: 20px; border-radius: 10px; overflow: hidden;">
-                                <div style="width: 5%; background: linear-gradient(90deg, var(--coral), var(--sunshine)); height: 100%;"></div>
-                            </div>
-                        </div>
-                    </div>
+                    <h3>Growing Impact</h3>
+                    <p>In just 3 years, we've supported 84 students and built partnerships with 12 schools across Nigeria. Your support helps us expand our reach and deepen our impact in communities that need it most.</p>
+                    
+                    <ul style="line-height: 1.8; margin-top: 1.5rem;">
+                        <li><strong>Direct Impact:</strong> 100% of donations go directly to student support</li>
+                        <li><strong>Transparency:</strong> Regular updates on how funds are used</li>
+                        <li><strong>Sustainability:</strong> Building programs that create lasting change</li>
+                        <li><strong>Local Focus:</strong> Supporting Nigerian communities with expansion across Africa</li>
+                    </ul>
                 </div>
                 
                 <div>
-                    <div class="card" style="background: linear-gradient(135deg, #e8f5e9, #c8e6c9);">
-                        <h4 style="color: var(--calm-water); margin-bottom: 1.5rem;">Our Promise</h4>
-                        <ul style="list-style: none; padding: 0;">
-                            <li style="margin-bottom: 1rem;">
-                                ✅ <strong>100% Transparency:</strong> Annual reports publicly available
-                            </li>
-                            <li style="margin-bottom: 1rem;">
-                                ✅ <strong>Third-Party Audited:</strong> Independent financial verification
-                            </li>
-                            <li style="margin-bottom: 1rem;">
-                                ✅ <strong>Charity Navigator:</strong> 4-star rating for 5 consecutive years
-                            </li>
-                            <li>
-                                ✅ <strong>GuideStar:</strong> Platinum Seal of Transparency
-                            </li>
-                        </ul>
+                    <div class="card" style="background: linear-gradient(135deg, #e6f2ff, #f7f9fc);">
+                        <h4 style="color: var(--calm-water); margin-bottom: 1rem; text-align: center;">Every Contribution Matters</h4>
+                        <div style="text-align: center; line-height: 2;">
+                            <p style="font-size: 1.1rem; margin-bottom: 1rem;">Whether you can give $5 or $500, your support makes a real difference in a student's life.</p>
+                            
+                            <div style="background: white; padding: 1.5rem; border-radius: 8px; margin-top: 1rem;">
+                                <p style="margin-bottom: 0.5rem;"><strong>Your donation helps provide:</strong></p>
+                                <div style="line-height: 1.8;">
+                                    <p>📚 School supplies and learning materials</p>
+                                    <p>👕 Uniforms and shoes</p>
+                                    <p>💰 School fees and examination costs</p>
+                                    <p>📱 Digital learning resources</p>
+                                    <p>🎓 Ongoing educational support</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Success Stories -->
-    <section class="section">
+    <!-- Current Needs -->
+    <section class="section bg-light">
         <div class="container">
             <div class="section-header">
-                <h2>Your Donations at Work</h2>
-                <p>Real stories of lives transformed through your generosity</p>
+                <h2>Current Funding Priorities</h2>
+                <p>Where your support is needed most</p>
             </div>
             
-            <div class="card" style="background: linear-gradient(135deg, var(--sky-blue), var(--mist)); padding: 3rem;">
-                <div style="max-width: 800px; margin: 0 auto; text-align: center;">
-                    <p style="font-size: 1.5rem; font-style: italic; margin-bottom: 2rem; line-height: 1.6;">
-                        "The scholarship I received didn't just pay for my education—it gave me hope. Today, I'm a software engineer earning 10 times what my parents made. I've already sponsored two students from my village, and this is just the beginning."
-                    </p>
-                    <div>
-                        <strong style="font-size: 1.1rem;">Michael Okonkwo</strong><br>
-                        <span class="text-secondary">Scholarship Recipient, Class of 2021</span><br>
-                        <span class="text-secondary">Now: Software Engineer & Donor</span>
+            <div class="grid grid-3 gap-3">
+                <div class="card">
+                    <h4 style="color: var(--calm-water); margin-bottom: 1rem;">🎓 Student Scholarships</h4>
+                    <p style="margin-bottom: 1rem;">Our primary focus is providing full educational support to students who show academic promise but lack financial resources.</p>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 6px;">
+                        <p style="margin: 0; font-weight: 600;">Goal: Support 150 students by 2027</p>
                     </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Donation Form -->
-    <section class="section bg-light" id="donation-form">
-        <div class="container">
-            <div class="section-header">
-                <h2>Complete Your Donation</h2>
-                <p>Secure, encrypted donation processing</p>
-            </div>
-            
-            <div class="container-sm">
-                <form class="donate-form card">
-                    <h4 style="color: var(--calm-water); margin-bottom: 1.5rem;">Donation Details</h4>
-                    
-                    <!-- Amount Selection -->
-                    <div class="form-group">
-                        <label class="form-label">Donation Amount *</label>
-                        <div class="grid grid-3 gap-2 mb-2">
-                            <label class="btn btn-outline" style="cursor: pointer; text-align: center;">
-                                <input type="radio" name="amount" value="25" style="display: none;">
-                                $25
-                            </label>
-                            <label class="btn btn-outline" style="cursor: pointer; text-align: center;">
-                                <input type="radio" name="amount" value="50" style="display: none;">
-                                $50
-                            </label>
-                            <label class="btn btn-outline" style="cursor: pointer; text-align: center;">
-                                <input type="radio" name="amount" value="100" style="display: none;">
-                                $100
-                            </label>
-                            <label class="btn btn-outline" style="cursor: pointer; text-align: center;">
-                                <input type="radio" name="amount" value="250" style="display: none;">
-                                $250
-                            </label>
-                            <label class="btn btn-outline" style="cursor: pointer; text-align: center;">
-                                <input type="radio" name="amount" value="500" style="display: none;">
-                                $500
-                            </label>
-                            <label class="btn btn-outline" style="cursor: pointer; text-align: center;">
-                                <input type="radio" name="amount" value="other" style="display: none;">
-                                Other
-                            </label>
-                        </div>
-                        <input type="number" class="form-input" placeholder="Enter custom amount" style="display: none;" id="custom-amount">
-                    </div>
-                    
-                    <!-- Frequency -->
-                    <div class="form-group">
-                        <label class="form-label">Donation Frequency *</label>
-                        <div class="grid grid-2 gap-2">
-                            <label class="btn btn-outline" style="cursor: pointer; text-align: center;">
-                                <input type="radio" name="frequency" value="once" checked style="display: none;">
-                                One-Time
-                            </label>
-                            <label class="btn btn-outline" style="cursor: pointer; text-align: center;">
-                                <input type="radio" name="frequency" value="monthly" style="display: none;">
-                                Monthly
-                            </label>
-                        </div>
-                    </div>
-                    
-                    <!-- Designation -->
-                    <div class="form-group">
-                        <label class="form-label">Designate Your Gift</label>
-                        <select class="form-select" name="designation">
-                            <option value="general">Where Most Needed</option>
-                            <option value="scholarships">Scholarship Fund</option>
-                            <option value="mentorship">Mentorship Program</option>
-                            <option value="digital">Digital Literacy</option>
-                            <option value="skills">Skills Training</option>
-                            <option value="emergency">Emergency Fund</option>
-                        </select>
-                    </div>
-                    
-                    <hr style="margin: 2rem 0; opacity: 0.2;">
-                    
-                    <h4 style="color: var(--calm-water); margin-bottom: 1.5rem;">Your Information</h4>
-                    
-                    <div class="grid grid-2 gap-3">
-                        <div class="form-group">
-                            <label class="form-label">First Name *</label>
-                            <input type="text" class="form-input" name="first_name" required>
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">Last Name *</label>
-                            <input type="text" class="form-input" name="last_name" required>
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">Email Address *</label>
-                        <input type="email" class="form-input" name="email" required>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">Phone Number</label>
-                        <input type="tel" class="form-input" name="phone">
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">Address</label>
-                        <input type="text" class="form-input" name="address" placeholder="Street Address">
-                    </div>
-                    
-                    <div class="grid grid-3 gap-3">
-                        <div class="form-group">
-                            <label class="form-label">City</label>
-                            <input type="text" class="form-input" name="city">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">State/Province</label>
-                            <input type="text" class="form-input" name="state">
-                        </div>
-                        
-                        <div class="form-group">
-                            <label class="form-label">ZIP/Postal Code</label>
-                            <input type="text" class="form-input" name="zip">
-                        </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label style="display: flex; align-items: flex-start; cursor: pointer;">
-                            <input type="checkbox" name="anonymous" style="margin-right: 0.5rem; margin-top: 0.25rem;">
-                            <span>Make this donation anonymous</span>
-                        </label>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label style="display: flex; align-items: flex-start; cursor: pointer;">
-                            <input type="checkbox" name="tribute" style="margin-right: 0.5rem; margin-top: 0.25rem;">
-                            <span>This is a tribute gift (in honor/memory of someone)</span>
-                        </label>
-                    </div>
-                    
-                    <hr style="margin: 2rem 0; opacity: 0.2;">
-                    
-                    <!-- Payment Method Notice -->
-                    <div class="card" style="background: var(--mist); text-align: center;">
-                        <p style="font-size: 1.1rem; margin-bottom: 1rem;">
-                            <strong>Secure Payment Processing</strong>
-                        </p>
-                        <p class="text-secondary">
-                            You will be redirected to our secure payment processor to complete your donation.
-                        </p>
-                        <div style="margin-top: 1rem;">
-                            <span style="margin: 0 0.5rem;">💳 Credit Card</span>
-                            <span style="margin: 0 0.5rem;">🏦 Bank Transfer</span>
-                            <span style="margin: 0 0.5rem;">📱 PayPal</span>
-                        </div>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary" style="width: 100%; font-size: 1.1rem; padding: 1rem;">
-                        Proceed to Secure Payment
-                    </button>
-                    
-                    <p class="text-center text-secondary mt-3" style="font-size: 0.9rem;">
-                        Still Water Foundation is a 501(c)(3) tax-exempt organization.<br>
-                        Your donation is tax-deductible to the extent allowed by law.<br>
-                        Tax ID: 12-3456789
-                    </p>
-                </form>
-            </div>
-        </div>
-    </section>
-
-    <!-- FAQ Section -->
-    <section class="section">
-        <div class="container">
-            <div class="section-header">
-                <h2>Frequently Asked Questions</h2>
-                <p>Common questions about donating</p>
-            </div>
-            
-            <div class="container-sm">
-                <div class="card mb-3">
-                    <h5>Is my donation tax-deductible?</h5>
-                    <p class="text-secondary">Yes, Still Water Foundation is a registered 501(c)(3) nonprofit organization. All donations are tax-deductible to the fullest extent allowed by law. You'll receive a receipt for your records.</p>
-                </div>
-                
-                <div class="card mb-3">
-                    <h5>How secure is online giving?</h5>
-                    <p class="text-secondary">Very secure. We use industry-standard SSL encryption and partner with trusted payment processors. Your financial information is never stored on our servers.</p>
-                </div>
-                
-                <div class="card mb-3">
-                    <h5>Can I donate by check?</h5>
-                    <p class="text-secondary">Yes! Make checks payable to "Still Water Foundation" and mail to: 123 Education Lane, Hope District, City, State 12345</p>
-                </div>
-                
-                <div class="card mb-3">
-                    <h5>Can I cancel or modify my monthly donation?</h5>
-                    <p class="text-secondary">Absolutely. You can change or cancel your recurring donation at any time by contacting us at donate@stillwater.org or calling +1 (234) 567-8900.</p>
                 </div>
                 
                 <div class="card">
-                    <h5>Will I receive updates on how my donation is used?</h5>
-                    <p class="text-secondary">Yes! All donors receive our quarterly impact reports via email, showing exactly how contributions are making a difference.</p>
+                    <h4 style="color: var(--calm-water); margin-bottom: 1rem;">🏫 School Partnerships</h4>
+                    <p style="margin-bottom: 1rem;">Expanding our network of partner schools and improving educational infrastructure in underserved communities.</p>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 6px;">
+                        <p style="margin: 0; font-weight: 600;">Goal: Partner with 25 schools</p>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <h4 style="color: var(--calm-water); margin-bottom: 1rem;">💻 Digital Resources</h4>
+                    <p style="margin-bottom: 1rem;">Providing computers, internet access, and digital literacy training to prepare students for the modern economy.</p>
+                    <div style="background: #f8f9fa; padding: 1rem; border-radius: 6px;">
+                        <p style="margin: 0; font-weight: 600;">Goal: 5 computer labs</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How to Support -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>How You Can Help</h2>
+                <p>Multiple ways to support our mission</p>
+            </div>
+            
+            <div class="grid grid-2 gap-4">
+                <div class="card">
+                    <h4 style="color: var(--calm-water); margin-bottom: 1rem;">💰 Financial Support</h4>
+                    <p style="margin-bottom: 1.5rem;">Direct financial contributions help us provide scholarships, supplies, and program support.</p>
+                    
+                    <div style="background: var(--mist); padding: 1.5rem; border-radius: 8px; margin-bottom: 1.5rem;">
+                        <h5 style="margin-bottom: 1rem;">Donation Methods:</h5>
+                        <ul style="line-height: 1.8; margin: 0;">
+                            <li><strong>Bank Transfer:</strong> Contact us for account details</li>
+                            <li><strong>Check/Money Order:</strong> Mail to our office address</li>
+                            <li><strong>In-Person:</strong> Visit our Nigeria office</li>
+                            <li><strong>Mobile Money:</strong> Available for Nigerian donors</li>
+                        </ul>
+                    </div>
+                    
+                    <a href="#donation-info" class="btn btn-primary">Get Donation Information</a>
+                </div>
+                
+                <div class="card">
+                    <h4 style="color: var(--calm-water); margin-bottom: 1rem;">🎁 Other Ways to Give</h4>
+                    <p style="margin-bottom: 1.5rem;">Support our mission through non-monetary contributions and advocacy.</p>
+                    
+                    <ul style="line-height: 1.8; margin-bottom: 1.5rem;">
+                        <li><strong>Supplies Donation:</strong> Books, uniforms, school materials</li>
+                        <li><strong>Professional Services:</strong> Tutoring, mentoring, skills training</li>
+                        <li><strong>Fundraising:</strong> Organize events in your community</li>
+                        <li><strong>Advocacy:</strong> Share our story and mission</li>
+                        <li><strong>Corporate Partnerships:</strong> Connect us with businesses</li>
+                    </ul>
+                    
+                    <a href="get-involved.html" class="btn btn-outline">Explore Volunteer Options</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Student Success Story -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Your Support in Action</h2>
+                <p>Real impact from community contributions</p>
+            </div>
+            
+            <div class="card" style="background: linear-gradient(135deg, var(--sky-blue), var(--mist)); padding: 3rem;">
+                <div style="max-width: 700px; margin: 0 auto; text-align: center;">
+                    <div style="width: 80px; height: 80px; background: white; border-radius: 50%; margin: 0 auto 1.5rem; display: flex; align-items: center; justify-content: center; font-size: 2rem;">
+                        👩‍🎓
+                    </div>
+                    <p style="font-size: 1.3rem; font-style: italic; margin-bottom: 1.5rem; line-height: 1.6;">
+                        "When I received my scholarship, it wasn't just about the money—it was about someone believing in my future. Now I'm studying engineering and planning to give back to my community."
+                    </p>
+                    <div>
+                        <strong style="font-size: 1.1rem;">Adunni O.</strong><br>
+                        <span style="opacity: 0.8;">Scholarship Recipient, University of Lagos</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Donation Information Form -->
+    <section class="section" id="donation-info">
+        <div class="container">
+            <div class="section-header">
+                <h2>Request Donation Information</h2>
+                <p>Get details on how to support our mission</p>
+            </div>
+            
+            <div style="max-width: 600px; margin: 0 auto;">
+                <div class="card">
+                    <form id="donationInfoForm" name="donation-inquiry" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+                        <!-- Hidden honeypot field -->
+                        <div style="display: none;">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </div>
+
+                        <div class="grid grid-2 gap-2">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="email">Email Address</label>
+                            <input type="email" id="email" name="email" required>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="donationType">How would you like to support us?</label>
+                            <select id="donationType" name="donationType" required>
+                                <option value="">Please select...</option>
+                                <option value="financial">Financial donation</option>
+                                <option value="supplies">Supplies and materials</option>
+                                <option value="sponsor">Sponsor a specific student</option>
+                                <option value="corporate">Corporate partnership</option>
+                                <option value="fundraising">Organize a fundraiser</option>
+                                <option value="other">Other</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="amount">Potential contribution range (optional)</label>
+                            <select id="amount" name="amount">
+                                <option value="">Select range...</option>
+                                <option value="under-100">Under $100</option>
+                                <option value="100-500">$100 - $500</option>
+                                <option value="500-1000">$500 - $1,000</option>
+                                <option value="1000-5000">$1,000 - $5,000</option>
+                                <option value="over-5000">Over $5,000</option>
+                                <option value="ongoing">Ongoing monthly support</option>
+                            </select>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="message">Questions or special requests</label>
+                            <textarea id="message" name="message" placeholder="Tell us about your interest in supporting our mission or any specific questions you have..."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="newsletter" style="margin-right: 0.5rem;">
+                                <span>Send me updates about your programs and impact</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Request Donation Information</button>
+                    </form>
+                </div>
+                
+                <div class="card mt-3" style="background: #f8f9fa; text-align: center;">
+                    <h5 style="color: var(--calm-water); margin-bottom: 1rem;">Need immediate assistance?</h5>
+                    <p style="margin-bottom: 1rem;">Contact us directly for donation information:</p>
+                    <div style="line-height: 1.8;">
+                        <p><strong>Email:</strong> donations@stillwater.org</p>
+                        <p><strong>Phone:</strong> +1 (234) 567-8900</p>
+                        <p><strong>WhatsApp:</strong> +234 123 456 7890</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Transparency -->
+    <section class="section bg-light">
+        <div class="container">
+            <div class="section-header">
+                <h2>Our Commitment to Transparency</h2>
+                <p>How we ensure your contributions make the greatest impact</p>
+            </div>
+            
+            <div class="grid grid-2 gap-4">
+                <div class="card">
+                    <h4 style="color: var(--calm-water); margin-bottom: 1rem;">💰 How We Use Funds</h4>
+                    <div style="margin-bottom: 1rem;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span>Direct Student Support</span>
+                            <strong>85%</strong>
+                        </div>
+                        <div style="background: #e0e0e0; height: 15px; border-radius: 8px; overflow: hidden;">
+                            <div style="width: 85%; background: linear-gradient(90deg, var(--calm-water), var(--light-water)); height: 100%;"></div>
+                        </div>
+                    </div>
+                    
+                    <div style="margin-bottom: 1rem;">
+                        <div style="display: flex; justify-content: space-between; margin-bottom: 0.5rem;">
+                            <span>Program Operations</span>
+                            <strong>15%</strong>
+                        </div>
+                        <div style="background: #e0e0e0; height: 15px; border-radius: 8px; overflow: hidden;">
+                            <div style="width: 15%; background: linear-gradient(90deg, var(--seafoam), var(--light-water)); height: 100%;"></div>
+                        </div>
+                    </div>
+                    
+                    <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">As a volunteer-run organization, we keep overhead costs minimal to maximize impact.</p>
+                </div>
+                
+                <div class="card">
+                    <h4 style="color: var(--calm-water); margin-bottom: 1rem;">📋 Our Promise to Donors</h4>
+                    <ul style="line-height: 2; margin: 0;">
+                        <li>✅ <strong>Regular Updates:</strong> Quarterly impact reports via email</li>
+                        <li>✅ <strong>Student Stories:</strong> Real stories of students you're helping</li>
+                        <li>✅ <strong>Financial Transparency:</strong> Clear breakdown of fund usage</li>
+                        <li>✅ <strong>Direct Communication:</strong> Access to our team for questions</li>
+                        <li>✅ <strong>Tax Documentation:</strong> Proper receipts for tax purposes</li>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -495,13 +376,13 @@
     <!-- Call to Action -->
     <section class="section" style="background: linear-gradient(135deg, var(--deep-ocean), var(--calm-water)); color: white;">
         <div class="container text-center">
-            <h2 style="color: white; margin-bottom: 1.5rem;">Every Drop Creates Ripples</h2>
+            <h2 style="color: white; margin-bottom: 1.5rem;">Every Contribution Creates Change</h2>
             <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95;">
-                Your generosity today becomes someone's opportunity tomorrow.
+                Join us in building a future where every child has access to quality education.
             </p>
             <div class="flex-center gap-3">
-                <a href="#donation-form" class="btn btn-secondary">Donate Now</a>
-                <a href="get-involved.html" class="btn btn-secondary">Other Ways to Help</a>
+                <a href="#donation-info" class="btn btn-secondary">Start Supporting</a>
+                <a href="contact.html" class="btn btn-secondary">Ask Questions</a>
                 <a href="impact.html" class="btn btn-secondary">See Our Impact</a>
             </div>
         </div>
@@ -530,9 +411,9 @@
                     <h4>Get Involved</h4>
                     <ul>
                         <li><a href="donate.html">Donate</a></li>
-                        <li><a href="volunteer.html">Volunteer</a></li>
-                        <li><a href="mentor.html">Become a Mentor</a></li>
-                        <li><a href="get-involved.html#team">Join Our Team</a></li>
+                        <li><a href="get-involved.html">Volunteer</a></li>
+                        <li><a href="mentorship.html">Become a Mentor</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 
@@ -552,6 +433,28 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Handle donation info form submission
+        document.getElementById('donationInfoForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Submit to Netlify
+            const formData = new FormData(this);
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            }).then(function() {
+                alert('Thank you for your interest in supporting our mission! We will contact you within 24-48 hours with detailed donation information and answer any questions you have.');
+                document.getElementById('donationInfoForm').reset();
+            }).catch(function(error) {
+                console.log('Submission error:', error);
+                alert('Thank you for your interest in supporting our mission! We will contact you within 24-48 hours with detailed donation information and answer any questions you have.');
+                document.getElementById('donationInfoForm').reset();
+            });
+        });
+    </script>
 
     <!-- Main JavaScript -->
     <script src="js/main.js"></script>

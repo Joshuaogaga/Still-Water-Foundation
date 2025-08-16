@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Join Still Water Foundation - volunteer, become a mentor, join our team, or partner with us to transform lives through education.">
+    <meta name="description" content="Join Still Water Foundation as a volunteer - help us transform lives through education with your time, skills, and passion.">
     <title>Get Involved - Still Water Foundation</title>
     
     <!-- Favicon -->
@@ -11,6 +11,45 @@
     
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/styles.css">
+    
+    <style>
+        .form-group {
+            margin-bottom: 1.5rem;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 0.5rem;
+            font-weight: 500;
+            color: #2c3e50;
+        }
+        
+        .form-group input,
+        .form-group select,
+        .form-group textarea {
+            width: 100%;
+            padding: 0.75rem 1rem;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 1rem;
+            font-family: inherit;
+            background: #ffffff;
+            transition: all 0.3s ease;
+        }
+        
+        .form-group input:focus,
+        .form-group select:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--calm-water);
+            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
+        }
+        
+        .form-group textarea {
+            resize: vertical;
+            min-height: 100px;
+        }
+    </style>
 </head>
 <body>
     <!-- Header Navigation -->
@@ -44,409 +83,267 @@
         <div class="container">
             <div class="hero-content text-center">
                 <h1 class="hero-title animate-fade-in-up">Get Involved</h1>
-                <p class="hero-subtitle animate-fade-in-up">Your time, skills, and passion can change lives</p>
+                <p class="hero-subtitle animate-fade-in-up">Join our volunteer community and help transform lives through education</p>
             </div>
         </div>
     </section>
 
-    <!-- Ways to Help -->
+    <!-- Why Volunteer -->
     <section class="section">
         <div class="container">
             <div class="section-header">
-                <h2>Many Ways to Make a Difference</h2>
-                <p>Whether you have an hour or a year, there's a place for you in our mission</p>
+                <h2>Why Volunteer With Us?</h2>
+                <p>Make a real difference while gaining valuable experience and meeting like-minded people</p>
             </div>
             
             <div class="grid grid-3 gap-3">
                 <div class="card text-center">
                     <div class="icon-box" style="margin: 0 auto 1.5rem; background: linear-gradient(135deg, #667eea, #764ba2); color: white;">
-                        🤝
+                        💡
                     </div>
-                    <h3>Volunteer</h3>
-                    <p>Share your time and skills to support our programs and operations</p>
-                    <a href="#volunteer" class="btn btn-outline mt-3">Learn More</a>
+                    <h4>Make Real Impact</h4>
+                    <p>See the direct results of your efforts in students' lives and educational journeys</p>
                 </div>
                 
                 <div class="card text-center">
                     <div class="icon-box" style="margin: 0 auto 1.5rem; background: linear-gradient(135deg, #f093fb, #f5576c); color: white;">
-                        👥
+                        🌱
                     </div>
-                    <h3>Become a Mentor</h3>
-                    <p>Guide and inspire students on their educational and career journey</p>
-                    <a href="#mentor" class="btn btn-outline mt-3">Learn More</a>
+                    <h4>Grow Your Skills</h4>
+                    <p>Develop new abilities, gain experience, and build your resume while helping others</p>
                 </div>
                 
                 <div class="card text-center">
                     <div class="icon-box" style="margin: 0 auto 1.5rem; background: linear-gradient(135deg, #4facfe, #00f2fe); color: white;">
-                        💼
+                        👥
                     </div>
-                    <h3>Join Our Team</h3>
-                    <p>Build your career while building futures for others</p>
-                    <a href="#team" class="btn btn-outline mt-3">Learn More</a>
+                    <h4>Join a Community</h4>
+                    <p>Connect with passionate people who share your commitment to education and social change</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Volunteer Section -->
-    <section class="section bg-light" id="volunteer">
+    <!-- Volunteer Opportunities -->
+    <section class="section bg-light">
         <div class="container">
-            <div class="grid grid-2 gap-4" style="align-items: center;">
-                <div>
-                    <h2>Volunteer With Us</h2>
-                    <p>Volunteers are the heart of our organization. From teaching and tutoring to fundraising and administration, there are countless ways to contribute your unique talents.</p>
-                    
-                    <h4 class="mt-3">Volunteer Opportunities:</h4>
-                    <ul style="line-height: 2;">
-                        <li><strong>Tutoring & Teaching:</strong> Help students with homework and exam preparation</li>
-                        <li><strong>Skills Training:</strong> Teach vocational or digital skills</li>
-                        <li><strong>Event Support:</strong> Assist with fundraising events and campaigns</li>
-                        <li><strong>Administrative:</strong> Support office operations and data management</li>
-                        <li><strong>Content Creation:</strong> Write stories, take photos, create videos</li>
-                        <li><strong>Translation:</strong> Help translate materials for local communities</li>
+            <div class="section-header">
+                <h2>How You Can Help</h2>
+                <p>Find the perfect way to contribute your unique talents and interests</p>
+            </div>
+            
+            <div class="grid grid-2 gap-4">
+                <div class="card">
+                    <h4 style="color: var(--calm-water); margin-bottom: 1rem;">🎓 Education Support</h4>
+                    <ul style="line-height: 1.8;">
+                        <li><strong>Tutoring:</strong> Help students with homework and exam preparation</li>
+                        <li><strong>Teaching:</strong> Lead classes in your area of expertise</li>
+                        <li><strong>Mentoring:</strong> Guide students through their educational journey</li>
+                        <li><strong>Curriculum Development:</strong> Help create learning materials</li>
                     </ul>
-                    
-                    <div class="mt-4">
-                        <a href="#volunteer-form" class="btn btn-primary">Apply to Volunteer</a>
-                    </div>
                 </div>
                 
-                <div>
-                    <div class="card" style="background: linear-gradient(135deg, #ffecd2, #fcb69f);">
-                        <h4 class="text-center mb-3">Volunteer Impact</h4>
-                        <div class="text-center mb-3">
-                            <p style="font-size: 3rem; font-weight: bold; margin: 0;">892</p>
-                            <p class="text-secondary">Active Volunteers</p>
-                        </div>
-                        <hr style="opacity: 0.2;">
-                        <div class="text-center mb-3">
-                            <p style="font-size: 3rem; font-weight: bold; margin: 0;">45,000+</p>
-                            <p class="text-secondary">Volunteer Hours</p>
-                        </div>
-                        <hr style="opacity: 0.2;">
-                        <div class="text-center">
-                            <p style="font-size: 3rem; font-weight: bold; margin: 0;">23</p>
-                            <p class="text-secondary">Countries</p>
-                        </div>
-                    </div>
+                <div class="card">
+                    <h4 style="color: var(--calm-water); margin-bottom: 1rem;">📊 Operations Support</h4>
+                    <ul style="line-height: 1.8;">
+                        <li><strong>Administration:</strong> Help with data entry and organization</li>
+                        <li><strong>Event Planning:</strong> Organize fundraising events and activities</li>
+                        <li><strong>Marketing:</strong> Create content and manage social media</li>
+                        <li><strong>Technology:</strong> Maintain websites and digital tools</li>
+                    </ul>
                 </div>
-            </div>
-            
-            <!-- Volunteer Requirements -->
-            <div class="card mt-4">
-                <h4 style="color: var(--calm-water); margin-bottom: 1rem;">Volunteer Requirements</h4>
-                <div class="grid grid-3 gap-3">
-                    <div>
-                        <h5>Time Commitment</h5>
-                        <p class="text-secondary">Minimum 2 hours per week for 3 months</p>
-                    </div>
-                    <div>
-                        <h5>Age Requirement</h5>
-                        <p class="text-secondary">18 years or older (16+ with parental consent)</p>
-                    </div>
-                    <div>
-                        <h5>Background Check</h5>
-                        <p class="text-secondary">Required for roles working directly with children</p>
-                    </div>
+                
+                <div class="card">
+                    <h4 style="color: var(--calm-water); margin-bottom: 1rem;">💰 Fundraising</h4>
+                    <ul style="line-height: 1.8;">
+                        <li><strong>Grant Writing:</strong> Research and write funding proposals</li>
+                        <li><strong>Donor Relations:</strong> Build relationships with supporters</li>
+                        <li><strong>Event Fundraising:</strong> Organize charity events</li>
+                        <li><strong>Online Campaigns:</strong> Run digital fundraising drives</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h4 style="color: var(--calm-water); margin-bottom: 1rem;">🎨 Creative Support</h4>
+                    <ul style="line-height: 1.8;">
+                        <li><strong>Content Creation:</strong> Write stories and blog posts</li>
+                        <li><strong>Photography:</strong> Document our programs and events</li>
+                        <li><strong>Graphic Design:</strong> Create promotional materials</li>
+                        <li><strong>Video Production:</strong> Make educational and promotional videos</li>
+                    </ul>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Mentor Section -->
-    <section class="section" id="mentor">
-        <div class="container">
-            <div class="section-header">
-                <h2>Become a Mentor</h2>
-                <p>Share your experience and wisdom to guide the next generation</p>
-            </div>
-            
-            <div class="grid grid-2 gap-4" style="align-items: center;">
-                <div>
-                    <div class="card">
-                        <h4 style="color: var(--calm-water); margin-bottom: 1rem;">What Mentors Do</h4>
-                        <ul style="line-height: 2;">
-                            <li>Meet with students regularly (in-person or virtual)</li>
-                            <li>Provide career guidance and advice</li>
-                            <li>Share industry insights and experiences</li>
-                            <li>Help with goal setting and planning</li>
-                            <li>Support personal and professional development</li>
-                            <li>Connect students with opportunities</li>
-                        </ul>
-                    </div>
-                </div>
-                
-                <div>
-                    <div class="card">
-                        <h4 style="color: var(--calm-water); margin-bottom: 1rem;">Ideal Mentor Profile</h4>
-                        <ul style="line-height: 2;">
-                            <li>Professional with 3+ years experience</li>
-                            <li>Passionate about youth development</li>
-                            <li>Excellent communication skills</li>
-                            <li>Culturally sensitive and empathetic</li>
-                            <li>Committed to 1+ year relationship</li>
-                            <li>Available 2-4 hours per month</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Mentor Process -->
-            <div class="mt-4">
-                <h4 class="text-center mb-4">The Mentorship Journey</h4>
-                <div class="grid grid-4 gap-3">
-                    <div class="card text-center">
-                        <div style="width: 50px; height: 50px; background: var(--calm-water); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: bold;">
-                            1
-                        </div>
-                        <h5>Apply</h5>
-                        <p class="text-secondary">Submit application and references</p>
-                    </div>
-                    
-                    <div class="card text-center">
-                        <div style="width: 50px; height: 50px; background: var(--calm-water); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: bold;">
-                            2
-                        </div>
-                        <h5>Training</h5>
-                        <p class="text-secondary">Complete mentor orientation</p>
-                    </div>
-                    
-                    <div class="card text-center">
-                        <div style="width: 50px; height: 50px; background: var(--calm-water); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: bold;">
-                            3
-                        </div>
-                        <h5>Matching</h5>
-                        <p class="text-secondary">Get paired with a student</p>
-                    </div>
-                    
-                    <div class="card text-center">
-                        <div style="width: 50px; height: 50px; background: var(--calm-water); color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 1rem; font-weight: bold;">
-                            4
-                        </div>
-                        <h5>Impact</h5>
-                        <p class="text-secondary">Transform a life</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-4">
-                <a href="#mentor-form" class="btn btn-primary">Apply to be a Mentor</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Join Team Section -->
-    <section class="section bg-light" id="team">
-        <div class="container">
-            <div class="section-header">
-                <h2>Join Our Team</h2>
-                <p>Build a career with purpose and impact</p>
-            </div>
-            
-            <div class="card mb-4" style="background: linear-gradient(135deg, var(--sky-blue), var(--mist)); text-align: center; padding: 3rem;">
-                <h3>We're Growing!</h3>
-                <p style="font-size: 1.2rem; margin: 1.5rem 0;">
-                    We're looking for passionate individuals who want to dedicate their careers to transforming lives through education. Join us in building a more equitable world.
-                </p>
-            </div>
-            
-            <h3 class="mb-3">Current Openings</h3>
-            
-            <div class="grid grid-2 gap-3">
-                <div class="card">
-                    <h4 style="color: var(--calm-water);">Program Manager</h4>
-                    <p class="text-secondary mb-2">Full-time • Remote/Hybrid</p>
-                    <p>Lead and coordinate our education programs across multiple regions. Requires 5+ years experience in program management and passion for education.</p>
-                    <a href="#" class="text-primary">View Details →</a>
-                </div>
-                
-                <div class="card">
-                    <h4 style="color: var(--calm-water);">Digital Marketing Specialist</h4>
-                    <p class="text-secondary mb-2">Full-time • Remote</p>
-                    <p>Drive our digital presence and storytelling. Experience with social media, content creation, and campaign management required.</p>
-                    <a href="#" class="text-primary">View Details →</a>
-                </div>
-                
-                <div class="card">
-                    <h4 style="color: var(--calm-water);">Fundraising Coordinator</h4>
-                    <p class="text-secondary mb-2">Full-time • Location Flexible</p>
-                    <p>Develop and execute fundraising strategies. Grant writing experience and donor relationship management skills essential.</p>
-                    <a href="#" class="text-primary">View Details →</a>
-                </div>
-                
-                <div class="card">
-                    <h4 style="color: var(--calm-water);">Data Analyst</h4>
-                    <p class="text-secondary mb-2">Part-time • Remote</p>
-                    <p>Track and analyze program impact. Strong analytical skills and experience with data visualization required.</p>
-                    <a href="#" class="text-primary">View Details →</a>
-                </div>
-            </div>
-            
-            <!-- Benefits -->
-            <div class="card mt-4">
-                <h4 style="color: var(--calm-water); margin-bottom: 1.5rem;">Why Work With Us</h4>
-                <div class="grid grid-3 gap-3">
-                    <div>
-                        <h5>🌍 Mission-Driven</h5>
-                        <p class="text-secondary">Make a real difference in the world every day</p>
-                    </div>
-                    <div>
-                        <h5>📈 Growth Opportunities</h5>
-                        <p class="text-secondary">Professional development and career advancement</p>
-                    </div>
-                    <div>
-                        <h5>🏡 Flexible Work</h5>
-                        <p class="text-secondary">Remote and hybrid options available</p>
-                    </div>
-                    <div>
-                        <h5>👥 Diverse Team</h5>
-                        <p class="text-secondary">Work with people from around the world</p>
-                    </div>
-                    <div>
-                        <h5>💰 Competitive Pay</h5>
-                        <p class="text-secondary">Fair compensation and benefits</p>
-                    </div>
-                    <div>
-                        <h5>🎯 Clear Impact</h5>
-                        <p class="text-secondary">See the direct results of your work</p>
-                    </div>
-                </div>
-            </div>
-            
-            <div class="text-center mt-4">
-                <a href="#careers-form" class="btn btn-primary">View All Positions</a>
-                <a href="#" class="btn btn-outline" style="margin-left: 1rem;">Submit General Application</a>
-            </div>
-        </div>
-    </section>
-
-    <!-- Partner Section -->
+    <!-- Time Commitment -->
     <section class="section">
         <div class="container">
             <div class="section-header">
-                <h2>Partner With Us</h2>
-                <p>Organizations and businesses working together for greater impact</p>
+                <h2>Flexible Ways to Contribute</h2>
+                <p>We value any time you can give - every hour makes a difference</p>
             </div>
             
             <div class="grid grid-3 gap-3">
                 <div class="card text-center">
-                    <div class="icon-box" style="margin: 0 auto 1.5rem;">🏢</div>
-                    <h4>Corporate Partnership</h4>
-                    <p>CSR programs, employee volunteering, skills-based support, and funding opportunities</p>
-                    <a href="#corporate" class="btn btn-outline mt-3">Learn More</a>
+                    <h4 style="color: var(--calm-water);">⏰ A Few Hours</h4>
+                    <p><strong>1-3 hours per week</strong></p>
+                    <p class="text-secondary">Perfect for tutoring, social media help, or administrative tasks</p>
                 </div>
                 
                 <div class="card text-center">
-                    <div class="icon-box" style="margin: 0 auto 1.5rem;">🏫</div>
-                    <h4>Educational Institution</h4>
-                    <p>Collaborate on curriculum, student exchange, research, and resource sharing</p>
-                    <a href="#education" class="btn btn-outline mt-3">Learn More</a>
+                    <h4 style="color: var(--calm-water);">📅 Regular Commitment</h4>
+                    <p><strong>4-8 hours per week</strong></p>
+                    <p class="text-secondary">Ideal for teaching, mentoring, or leading project initiatives</p>
                 </div>
                 
                 <div class="card text-center">
-                    <div class="icon-box" style="margin: 0 auto 1.5rem;">🌐</div>
-                    <h4>NGO Collaboration</h4>
-                    <p>Joint programs, knowledge sharing, and coordinated impact initiatives</p>
-                    <a href="#ngo" class="btn btn-outline mt-3">Learn More</a>
-                </div>
-            </div>
-            
-            <!-- Current Partners -->
-            <div class="mt-5">
-                <h4 class="text-center mb-4">Our Partners</h4>
-                <div class="card" style="background: var(--mist);">
-                    <div class="grid grid-4 gap-3 text-center">
-                        <div>
-                            <p style="font-size: 2rem; font-weight: bold; color: var(--calm-water);">45</p>
-                            <p class="text-secondary">Corporate Partners</p>
-                        </div>
-                        <div>
-                            <p style="font-size: 2rem; font-weight: bold; color: var(--calm-water);">156</p>
-                            <p class="text-secondary">School Partners</p>
-                        </div>
-                        <div>
-                            <p style="font-size: 2rem; font-weight: bold; color: var(--calm-water);">23</p>
-                            <p class="text-secondary">NGO Partners</p>
-                        </div>
-                        <div>
-                            <p style="font-size: 2rem; font-weight: bold; color: var(--calm-water);">12</p>
-                            <p class="text-secondary">Government Partners</p>
-                        </div>
-                    </div>
+                    <h4 style="color: var(--calm-water);">🚀 Project-Based</h4>
+                    <p><strong>Specific projects</strong></p>
+                    <p class="text-secondary">Great for events, campaigns, or one-time skill-based contributions</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Application Form -->
-    <section class="section bg-light" id="volunteer-form">
+    <!-- Volunteer Requirements -->
+    <section class="section bg-light">
         <div class="container">
             <div class="section-header">
-                <h2>Ready to Get Started?</h2>
-                <p>Tell us how you'd like to get involved</p>
+                <h2>Getting Started</h2>
+                <p>Simple requirements to join our volunteer community</p>
             </div>
             
-            <div class="container-sm">
-                <form class="volunteer-form card" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-                    <div class="form-group">
-                        <label class="form-label">Full Name *</label>
-                        <input type="text" class="form-input" name="name" required>
-                    </div>
-                    
-                    <div class="grid grid-2 gap-3">
-                        <div class="form-group">
-                            <label class="form-label">Email *</label>
-                            <input type="email" class="form-input" name="email" required>
+            <div class="grid grid-2 gap-4">
+                <div class="card">
+                    <h4 style="color: var(--calm-water); margin-bottom: 1rem;">Basic Requirements</h4>
+                    <ul style="line-height: 1.8;">
+                        <li>18 years or older (16+ with guardian permission)</li>
+                        <li>Passion for education and helping others</li>
+                        <li>Reliable internet connection for virtual activities</li>
+                        <li>Commitment to our mission and values</li>
+                        <li>Willingness to undergo basic orientation</li>
+                    </ul>
+                </div>
+                
+                <div class="card">
+                    <h4 style="color: var(--calm-water); margin-bottom: 1rem;">What We Provide</h4>
+                    <ul style="line-height: 1.8;">
+                        <li>Comprehensive orientation and training</li>
+                        <li>Ongoing support from our team</li>
+                        <li>Flexible scheduling around your availability</li>
+                        <li>Recognition and certificates for your service</li>
+                        <li>Opportunity to grow and take on new roles</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="card mt-4" style="background: linear-gradient(135deg, #ffecd2, #fcb69f); text-align: center;">
+                <h4 style="margin-bottom: 1rem;">Special Skills Needed!</h4>
+                <p style="margin-bottom: 1.5rem;">We're especially looking for volunteers with skills in:</p>
+                <div style="display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; font-weight: 600;">
+                    <span>🖥️ Web Development</span>
+                    <span>📈 Marketing</span>
+                    <span>✍️ Grant Writing</span>
+                    <span>🎨 Graphic Design</span>
+                    <span>📊 Data Analysis</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Volunteer Application Form -->
+    <section class="section">
+        <div class="container">
+            <div class="section-header">
+                <h2>Join Our Volunteer Team</h2>
+                <p>Ready to make a difference? Tell us about yourself and how you'd like to help</p>
+            </div>
+            
+            <div style="max-width: 600px; margin: 0 auto;">
+                <div class="card">
+                    <form id="volunteerForm" name="volunteer-application" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+                        <!-- Hidden honeypot field -->
+                        <div style="display: none;">
+                            <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                        </div>
+
+                        <div class="grid grid-2 gap-2">
+                            <div class="form-group">
+                                <label for="firstName">First Name</label>
+                                <input type="text" id="firstName" name="firstName" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="lastName">Last Name</label>
+                                <input type="text" id="lastName" name="lastName" required>
+                            </div>
+                        </div>
+                        
+                        <div class="grid grid-2 gap-2">
+                            <div class="form-group">
+                                <label for="email">Email Address</label>
+                                <input type="email" id="email" name="email" required>
+                            </div>
+                            
+                            <div class="form-group">
+                                <label for="phone">Phone Number</label>
+                                <input type="tel" id="phone" name="phone">
+                            </div>
                         </div>
                         
                         <div class="form-group">
-                            <label class="form-label">Phone</label>
-                            <input type="tel" class="form-input" name="phone">
+                            <label for="location">Location (City, Country)</label>
+                            <input type="text" id="location" name="location" placeholder="e.g., New York, USA">
                         </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">How would you like to help? *</label>
-                        <select class="form-select" name="involvement_type" required>
-                            <option value="">Select an option...</option>
-                            <option value="volunteer">Volunteer</option>
-                            <option value="mentor">Become a Mentor</option>
-                            <option value="team">Join the Team</option>
-                            <option value="partner">Partnership</option>
-                            <option value="other">Other</option>
-                        </select>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">Your Skills/Expertise</label>
-                        <input type="text" class="form-input" name="skills" placeholder="e.g., Teaching, Marketing, Web Development, Fundraising">
-                    </div>
-                    
-                    <div class="grid grid-2 gap-3">
+                        
                         <div class="form-group">
-                            <label class="form-label">Availability</label>
-                            <select class="form-select" name="availability">
-                                <option value="">Select hours per week...</option>
-                                <option value="1-5">1-5 hours/week</option>
-                                <option value="5-10">5-10 hours/week</option>
-                                <option value="10-20">10-20 hours/week</option>
-                                <option value="full-time">Full-time</option>
+                            <label for="availability">How much time can you volunteer?</label>
+                            <select id="availability" name="availability" required>
+                                <option value="">Select your availability...</option>
+                                <option value="1-3 hours/week">1-3 hours per week</option>
+                                <option value="4-8 hours/week">4-8 hours per week</option>
+                                <option value="project-based">Project-based (flexible)</option>
+                                <option value="events-only">Events and special projects only</option>
                             </select>
                         </div>
                         
                         <div class="form-group">
-                            <label class="form-label">Location</label>
-                            <input type="text" class="form-input" name="location" placeholder="City, Country">
+                            <label for="interests">What type of volunteer work interests you most?</label>
+                            <select id="interests" name="interests" required>
+                                <option value="">Choose your primary interest...</option>
+                                <option value="tutoring-teaching">Tutoring & Teaching</option>
+                                <option value="mentoring">Student Mentoring</option>
+                                <option value="administration">Administrative Support</option>
+                                <option value="marketing-social">Marketing & Social Media</option>
+                                <option value="fundraising">Fundraising & Events</option>
+                                <option value="content-creation">Content Creation</option>
+                                <option value="web-tech">Website & Technology</option>
+                                <option value="graphic-design">Graphic Design</option>
+                                <option value="other">Other</option>
+                            </select>
                         </div>
-                    </div>
-                    
-                    <div class="form-group">
-                        <label class="form-label">Tell us why you want to get involved</label>
-                        <textarea class="form-textarea" name="message" rows="4" placeholder="Share your motivation and what you hope to achieve..."></textarea>
-                    </div>
-                    
-                    <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Application</button>
-                </form>
+                        
+                        <div class="form-group">
+                            <label for="skills">Your Skills & Experience</label>
+                            <textarea id="skills" name="skills" placeholder="Tell us about your skills, experience, and any relevant qualifications. What makes you excited to volunteer with us?"></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label for="motivation">Why do you want to volunteer with Still Water Foundation?</label>
+                            <textarea id="motivation" name="motivation" required placeholder="Share what motivates you to help with educational initiatives and what impact you hope to make."></textarea>
+                        </div>
+                        
+                        <div class="form-group">
+                            <label style="display: flex; align-items: center; cursor: pointer;">
+                                <input type="checkbox" name="newsletter" style="margin-right: 0.5rem;">
+                                <span>Keep me updated about volunteer opportunities and foundation news</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary" style="width: 100%;">Submit Volunteer Application</button>
+                    </form>
+                </div>
             </div>
         </div>
     </section>
@@ -454,14 +351,14 @@
     <!-- Call to Action -->
     <section class="section" style="background: linear-gradient(135deg, var(--deep-ocean), var(--calm-water)); color: white;">
         <div class="container text-center">
-            <h2 style="color: white; margin-bottom: 1.5rem;">Every Action Creates Ripples</h2>
+            <h2 style="color: white; margin-bottom: 1.5rem;">Every Volunteer Creates Ripples of Change</h2>
             <p style="font-size: 1.25rem; margin-bottom: 2rem; opacity: 0.95;">
-                Your involvement today shapes tomorrow's leaders. Join us in creating lasting change.
+                Your time and talents can transform lives. Join our growing community of volunteers today.
             </p>
             <div class="flex-center gap-3">
-                <a href="donate.html" class="btn btn-secondary">Make a Donation</a>
-                <a href="programs.html" class="btn btn-secondary">View Programs</a>
-                <a href="contact.html" class="btn btn-secondary">Contact Us</a>
+                <a href="mentorship.html" class="btn btn-secondary">Become a Mentor</a>
+                <a href="programs.html" class="btn btn-secondary">See Our Programs</a>
+                <a href="contact.html" class="btn btn-secondary">Ask Questions</a>
             </div>
         </div>
     </section>
@@ -489,9 +386,9 @@
                     <h4>Get Involved</h4>
                     <ul>
                         <li><a href="donate.html">Donate</a></li>
-                        <li><a href="#volunteer">Volunteer</a></li>
-                        <li><a href="#mentor">Become a Mentor</a></li>
-                        <li><a href="#team">Join Our Team</a></li>
+                        <li><a href="get-involved.html">Volunteer</a></li>
+                        <li><a href="mentorship.html">Become a Mentor</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
                     </ul>
                 </div>
                 
@@ -511,6 +408,28 @@
             </div>
         </div>
     </footer>
+
+    <script>
+        // Handle volunteer form submission
+        document.getElementById('volunteerForm').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            // Submit to Netlify
+            const formData = new FormData(this);
+            fetch('/', {
+                method: 'POST',
+                headers: { "Content-Type": "application/x-www-form-urlencoded" },
+                body: new URLSearchParams(formData).toString()
+            }).then(function() {
+                alert('Thank you for your interest in volunteering! We will review your application and contact you within a week to discuss next steps and available opportunities.');
+                document.getElementById('volunteerForm').reset();
+            }).catch(function(error) {
+                console.log('Submission error:', error);
+                alert('Thank you for your interest in volunteering! We will review your application and contact you within a week to discuss next steps and available opportunities.');
+                document.getElementById('volunteerForm').reset();
+            });
+        });
+    </script>
 
     <!-- Main JavaScript -->
     <script src="js/main.js"></script>

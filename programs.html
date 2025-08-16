@@ -107,6 +107,112 @@
         </div>
     </section>
 
+    <!-- Add this section right after your scholarship program section in programs.html -->
+
+<!-- Scholarship Criteria Section -->
+<section class="section" id="criteria" style="display: none;">
+    <div class="container">
+        <div class="section-header">
+            <h2>Scholarship Eligibility Criteria</h2>
+            <p>Requirements and evaluation process for our educational scholarship program</p>
+        </div>
+        
+        <div class="grid grid-2 gap-4">
+            <div class="card">
+                <h4 style="color: var(--calm-water); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    📋 Basic Requirements
+                </h4>
+                <ul style="line-height: 1.8; list-style: none; padding: 0;">
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                        <strong>Age:</strong> 16-25 years old
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                        <strong>Academic Standing:</strong> Minimum GPA of 3.0 (or equivalent)
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                        <strong>Enrollment:</strong> Accepted or currently enrolled in an accredited institution
+                    </li>
+                    <li style="padding: 0.5rem 0; border-bottom: 1px solid #f0f0f0;">
+                        <strong>Financial Need:</strong> Demonstrated financial hardship
+                    </li>
+                    <li style="padding: 0.5rem 0;">
+                        <strong>Character:</strong> Good moral standing and community involvement
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="card">
+                <h4 style="color: var(--calm-water); margin-bottom: 1rem; display: flex; align-items: center; gap: 0.5rem;">
+                    🎯 How We Evaluate Applications
+                </h4>
+                <div style="line-height: 1.6;">
+                    <div style="margin-bottom: 1rem; padding: 0.75rem; background: #f8f9fa; border-radius: 6px;">
+                        <strong>Academic Performance (30%)</strong><br>
+                        <span style="color: #666; font-size: 0.9rem;">Grades, test scores, and academic achievements</span>
+                    </div>
+                    <div style="margin-bottom: 1rem; padding: 0.75rem; background: #f8f9fa; border-radius: 6px;">
+                        <strong>Financial Need (25%)</strong><br>
+                        <span style="color: #666; font-size: 0.9rem;">Family income and financial circumstances</span>
+                    </div>
+                    <div style="margin-bottom: 1rem; padding: 0.75rem; background: #f8f9fa; border-radius: 6px;">
+                        <strong>Leadership & Service (20%)</strong><br>
+                        <span style="color: #666; font-size: 0.9rem;">Community involvement and leadership activities</span>
+                    </div>
+                    <div style="margin-bottom: 1rem; padding: 0.75rem; background: #f8f9fa; border-radius: 6px;">
+                        <strong>Personal Statement (15%)</strong><br>
+                        <span style="color: #666; font-size: 0.9rem;">Goals, motivation, and commitment to education</span>
+                    </div>
+                    <div style="padding: 0.75rem; background: #f8f9fa; border-radius: 6px;">
+                        <strong>Recommendations (10%)</strong><br>
+                        <span style="color: #666; font-size: 0.9rem;">Teacher or mentor references</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="card" style="margin-top: 2rem; background: linear-gradient(135deg, #ffecd2, #fcb69f);">
+            <h4 style="margin-bottom: 1rem; text-align: center;">Important Notes</h4>
+            <div class="grid grid-2 gap-3">
+                <div>
+                    <p style="margin-bottom: 1rem;"><strong>📅 Application Deadlines:</strong></p>
+                    <ul style="line-height: 1.6; margin: 0;">
+                        <li>Fall Semester: July 31st</li>
+                        <li>Spring Semester: December 31st</li>
+                    </ul>
+                </div>
+                <div>
+                    <p style="margin-bottom: 1rem;"><strong>📋 Required Documents:</strong></p>
+                    <ul style="line-height: 1.6; margin: 0;">
+                        <li>Academic transcripts</li>
+                        <li>Financial information</li>
+                        <li>Two recommendation letters</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        
+        <div class="text-center mt-4">
+            <a href="application.html" class="btn btn-primary">Apply Now</a>
+            <button onclick="hideCriteria()" class="btn btn-outline" style="margin-left: 1rem;">Back to Programs</button>
+        </div>
+    </div>
+</section>
+
+<script>
+// Function to show criteria section
+function showCriteria() {
+    document.getElementById('criteria').style.display = 'block';
+    document.getElementById('criteria').scrollIntoView({ behavior: 'smooth' });
+}
+
+// Function to hide criteria section
+function hideCriteria() {
+    document.getElementById('criteria').style.display = 'none';
+    // Scroll back to scholarship section
+    document.getElementById('scholarships').scrollIntoView({ behavior: 'smooth' });
+}
+</script>
+
     <!-- Mentorship Program -->
     <section class="section" id="mentorship">
         <div class="container">
